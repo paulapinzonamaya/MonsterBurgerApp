@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/drawable/esquinas_redondeadas.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/drawable/ic_logo_background.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/font/montez.xml" value="0.234375" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/font/poppins.xml" value="0.234375" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_admin_detail_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_coments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_coments_detail_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_home.xml" value="0.16614583333333333" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_order.xml" value="0.16197916666666667" />
       </map>
     </option>
   </component>
