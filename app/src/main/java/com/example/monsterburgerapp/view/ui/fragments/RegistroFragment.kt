@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.navigation.findNavController
 import com.example.monsterburgerapp.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,10 +28,13 @@ class RegistroFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    private lateinit var auth: FirebaseAuth
+
     lateinit var nombre: EditText
     lateinit var telefono: EditText
     lateinit var email: EditText
-    lateinit var password: EditText
+    lateinit var pass: EditText
     lateinit var btnGuardarRegistro: Button
 
 
@@ -39,6 +46,9 @@ class RegistroFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
     }
 
 
@@ -57,25 +67,45 @@ class RegistroFragment : Fragment() {
         nombre=view.findViewById(R.id.registroTextNombre)
         telefono=view.findViewById(R.id.registroTextNumero)
         email=view.findViewById(R.id.registroTextEmail)
-        password=view.findViewById(R.id.registroTextPassword)
+        pass=view.findViewById(R.id.registroTextPassword)
         btnGuardarRegistro=view.findViewById(R.id.btnRegistrarse)
 
 
         btnGuardarRegistro.setOnClickListener{
                 view:View ->
             println("BTN REGISTRARSE")
+
+            createAccount(view,nombre.text.toString(),telefono.text.toString(),email.text.toString(), pass.text.toString())
+
+
         }
-
-
-
-
-
-
     }
 
 
 
+    fun createAccount(view: View,nombre:String,telefono:String,email:String, password:String){
 
+        println(email)
+        println(password)
+        println(nombre)
+        println(telefono)
+
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+
+                    val user = auth.currentUser
+
+                    println("<<<<<<<<<<<CREADO CON EXITO")
+                    view.findNavController().navigate(R.id.action_registroFragment_to_homeActivity)
+
+                } else {
+                    println("<<<<<<<<<<<<<<<CREACION CON FALLA")
+                }
+            }
+    }
 
     companion object {
         /**

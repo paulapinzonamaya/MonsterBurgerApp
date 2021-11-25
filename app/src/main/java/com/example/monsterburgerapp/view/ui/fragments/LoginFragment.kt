@@ -7,7 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.monsterburgerapp.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,14 +39,26 @@ class loginFragment : Fragment() {
     private lateinit var btnRegistro:Button
 
 
+    private lateinit var auth: FirebaseAuth
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
-    }
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+
+            }
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,20 +81,73 @@ class loginFragment : Fragment() {
         btnInicio.setOnClickListener{
             view:View ->
             println("BTN INICIO")
+
+            signIn(view,email.text.toString(),pass.text.toString())
+
+
+
+
         }
         btnRegistro.setOnClickListener{
                     view:View ->
                 println("BTN REGISTRO")
+
+                view.findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
             }
 
 
 
+
+
+
+
+
+
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if(currentUser !=null){
+            println("YA HAY UN USUARIO LOGUEADO")
+        }else{
+            println("NO HAY UN USUARIO LOGUEADO")
+        }
     }
 
 
 
 
 
+
+    fun signIn (view:View,email:String, password:String){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+
+                    val user = auth.currentUser
+
+                    view.findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
+
+
+
+                    println("<<<<<<<<<<<LOGIN CON EXITO")
+
+
+                } else {
+                    // If sign in fails, display a message to the user.
+                    println("<<<<<<LOGIN CON FALLA")
+                    Toast.makeText(requireContext().applicationContext, "Usario no Valido", Toast.LENGTH_LONG).show()
+
+                }
+            }
+
+
+    }
 
 
     companion object {
