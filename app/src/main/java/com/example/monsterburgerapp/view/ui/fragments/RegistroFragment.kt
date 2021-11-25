@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import com.example.monsterburgerapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +24,15 @@ class RegistroFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var nombre: EditText
+    lateinit var telefono: EditText
+    lateinit var email: EditText
+    lateinit var password: EditText
+    lateinit var btnGuardarRegistro: Button
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,6 +41,7 @@ class RegistroFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,6 +49,33 @@ class RegistroFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registro, container, false)
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        nombre=view.findViewById(R.id.registroTextNombre)
+        telefono=view.findViewById(R.id.registroTextNumero)
+        email=view.findViewById(R.id.registroTextEmail)
+        password=view.findViewById(R.id.registroTextPassword)
+        btnGuardarRegistro=view.findViewById(R.id.btnRegistrarse)
+
+
+        btnGuardarRegistro.setOnClickListener{
+                view:View ->
+            println("BTN REGISTRARSE")
+        }
+
+
+
+
+
+
+    }
+
+
+
+
 
     companion object {
         /**
