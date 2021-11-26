@@ -73,6 +73,14 @@ dependencies {
 
 
 
+    //Añadimos la dependencia de RecyclerView
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Añadimos dependencias del componente Navigation
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.3'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.3'
+
+
 
 
 }

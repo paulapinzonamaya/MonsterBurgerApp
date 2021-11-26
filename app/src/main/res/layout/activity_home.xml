@@ -6,4 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.activities.HomeActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbarprincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/boton_menu"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/botton_menu" />
+
+                    <ImageView
+                        android:id="@+id/logo_en_toolbar"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="291dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/monsterburger4" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_info_24" />
+
+                </LinearLayout>
+
+
+
+
+            </Toolbar>
+
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/fragContent"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="622dp"
+            android:layout_above="@+id/bnvMenu"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="53dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnvMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FA3C32"
+            app:menu="@menu/bnv_menu"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

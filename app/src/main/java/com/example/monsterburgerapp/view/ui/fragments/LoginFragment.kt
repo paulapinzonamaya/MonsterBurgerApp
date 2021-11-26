@@ -78,6 +78,19 @@ class loginFragment : Fragment() {
         btnRegistro= view.findViewById(R.id.btnRegistrate)
 
 
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if(currentUser !=null){
+            println("YA HAY UN USUARIO LOGUEADO")
+            view.findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
+
+        }else{
+            println("NO HAY UN USUARIO LOGUEADO")
+        }
+
+
+
+
         btnInicio.setOnClickListener{
             view:View ->
             println("BTN INICIO")
@@ -96,26 +109,11 @@ class loginFragment : Fragment() {
             }
 
 
-
-
-
-
-
-
-
-
-
     }
 
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if(currentUser !=null){
-            println("YA HAY UN USUARIO LOGUEADO")
-        }else{
-            println("NO HAY UN USUARIO LOGUEADO")
-        }
+
     }
 
 
