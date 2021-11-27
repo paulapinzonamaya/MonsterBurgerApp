@@ -10,15 +10,13 @@
     android:padding="20dp">
 
 
-
-
     <TextView
         android:id="@+id/signinText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inicio de Sesión"
+        android:text="@string/inicio_de_sesi_n"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_margin="15dp"
         android:gravity="center"/>
@@ -30,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:fontFamily="@font/roboto"
-        android:text="Bienvenido a Monster Burger!"
+        android:text="@string/bienvenido_a_monster_burger"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,7 +38,7 @@
         android:id="@+id/continuarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inicia sesión para continuar"
+        android:text="@string/inicia_sesi_n_para_continuar"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/roboto"/>
@@ -65,13 +63,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="12dp"
             android:background="@color/white"
-            android:hint="Correo">
+            android:hint="@string/correo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/loginTextEmail"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableStart="@drawable/ic_baseline_email_24"
                 android:drawablePadding="8dp"
                 android:fontFamily="@font/poppins" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,10 +80,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="335dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="12dp"
             android:background="@color/white"
-            android:hint="Contraseña"
+            android:hint="@string/contrase_a"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -103,10 +101,10 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorLaunch"
-            android:text="INICIAR SESIÓN"
+            android:text="@string/iniciar_sesi_n"
             android:textColor="@color/white"
-            android:textSize="14dp"
-            app:cornerRadius="60px" />
+            android:textSize="14sp"
+            app:cornerRadius="60dp" />
 
         <TextView
             android:id="@+id/otrosText"
@@ -114,32 +112,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins"
-            android:text="O Inicia sesión con"
+            android:text="@string/o_inicia_sesi_n_con"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <ImageButton
-                android:id="@+id/googleButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/google" />
-
-            <ImageButton
-                android:id="@+id/facebookButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/fb" />
-
-        </LinearLayout>
-
 
         <TextView
             android:id="@+id/nuevoUsuario"
@@ -149,10 +126,10 @@
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/poppins"
-            android:text="No tienes cuenta?"
+            android:text="@string/no_tienes_cuenta"
             android:textAlignment="center"
             android:textColor="@android:color/darker_gray"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
 
@@ -163,10 +140,10 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorLaunch"
-            android:text="REGISTRATE"
-            android:textSize="14dp"
+            android:text="@string/registrate"
+            android:textSize="14sp"
             android:textColor="@color/white"
-            app:cornerRadius="60px" />
+            app:cornerRadius="60dp" />
 
         <TextView
             android:id="@+id/mensajeSesion"
@@ -174,12 +151,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins"
-            android:text="Al registrarse o logearse, confirmas aceptar nuestros Términos de uso"
+            android:text="@string/al_registrarse"
             android:textColor="@color/colorTextSubtittle"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
-
-
 
 </LinearLayout>
