@@ -2,22 +2,252 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/B_ubicacion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ui.fragments.HomeFragment">
 
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
+            <Button
+                android:id="@+id/Button_ubicacion"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="29dp"
+                android:layout_marginTop="10dp"
+                android:text="Ubicación"
+                android:textColor="@color/black"
+                android:backgroundTint="#ACACAC"/>
+
+            <TextView
+                android:id="@+id/txt_hola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hola,Usuario"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_Bdias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buenos Dias!"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="0dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"/>
+
+            <EditText
+                android:id="@+id/buscador"
+                android:layout_width="300dp"
+                android:layout_height="33dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/black"
+                android:hint="Buscar"
+                android:inputType="date"
+                android:background="#ACACAC" />
+
+            <ImageButton
+                android:id="@+id/Button_Qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="330dp"
+                android:layout_marginTop="-38dp"
+                android:backgroundTint="#ACACAC"
+                android:src="@drawable/ic_baseline_qr_code_scanner_24" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginHorizontal="160dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Categorias"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"/>
+
+            <ImageView
+                android:id="@+id/entradas"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/entradas"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp"/>
+            <Button
+                android:id="@+id/button_entradas"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-30dp"
+                android:text="Entradas"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/bebidas"
+                android:layout_width="160dp"
+                android:layout_height="166dp"
+                android:layout_marginHorizontal="215dp"
+                android:layout_marginTop="-180dp"
+                android:src="@drawable/bebidas" />
+            <Button
+                android:id="@+id/button_acompanamiento"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="acompañamiento"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_marginTop="-35dp"
+                android:layout_marginHorizontal="220dp"/>
+
+            <ImageView
+                android:id="@+id/hamburguesas"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="30dp"
+
+                android:src="@drawable/hamburguesas" />
+
+            <Button
+                android:id="@+id/button_hamburguesa"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-20dp"
+                android:text="Hamburguesas"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/acompanamientos"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/acompanamiento"
+                android:layout_marginTop="-190dp"
+                android:layout_marginHorizontal="215dp"/>
+            <Button
+                android:id="@+id/button_bebidas"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Bebidas"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_marginTop="-18dp"
+                android:layout_marginHorizontal="220dp"/>
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="160dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Promociones"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/combo"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/combohamburguesa"
+                android:layout_marginHorizontal="60dp"/>
+
+            <TextView
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="65dp"
+                android:layout_marginTop="-40dp"
+                android:fontFamily="@font/poppins"
+                android:text="Combo de hamburguesa tradicional con papas a la francesa y gaseosa "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="$18.000"
+                android:textStyle="italic"
+                android:layout_marginHorizontal="65dp"/>
+
+
+            <ImageButton
+                android:id="@+id/button_promo1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                android:layout_marginTop="-60dp"
+                android:layout_marginHorizontal="300dp"
+                android:background="#FA3C32"/>
+
+            <ImageView
+                android:id="@+id/combo2"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/doshamburguesas"
+                android:layout_marginHorizontal="60dp"/>
+            <TextView
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="65dp"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:text=" 2 x 1 Hamburguesas artesanales acompañadas de una deliciosa limonada "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <TextView
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="$25.000"
+                android:textStyle="italic"
+                android:layout_marginHorizontal="65dp"/>
+            <ImageButton
+                android:id="@+id/button_promo2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                android:layout_marginTop="-60dp"
+                android:layout_marginHorizontal="300dp"
+                android:background="#FA3C32"/>
+
+
+
+
+
+
 
         </LinearLayout>
+
+
+
+
     </ScrollView>
+
+
+
+
+
 </FrameLayout>

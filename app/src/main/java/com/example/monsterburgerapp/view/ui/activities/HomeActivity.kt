@@ -8,6 +8,8 @@ import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.ActivityHomeBinding
 import com.example.monsterburgerapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 class HomeActivity : AppCompatActivity() {
 
@@ -21,7 +23,13 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         configNav()
+
+
     }
+
+
+
+
 
 
 
