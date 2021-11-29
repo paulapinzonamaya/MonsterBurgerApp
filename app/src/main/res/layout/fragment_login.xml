@@ -9,9 +9,6 @@
     android:background="@drawable/background"
     android:padding="20dp">
 
-
-
-
     <TextView
         android:id="@+id/signinText"
         android:layout_width="match_parent"
@@ -22,7 +19,6 @@
         android:textStyle="bold"
         android:layout_margin="15dp"
         android:gravity="center"/>
-
 
     <TextView
         android:id="@+id/bienvenidoText"
@@ -83,7 +79,7 @@
             android:layout_width="335dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="25dp"
             android:background="@color/white"
             android:hint="Contraseña"
             app:passwordToggleEnabled="true">
@@ -107,39 +103,6 @@
             android:textColor="@color/white"
             android:textSize="14dp"
             app:cornerRadius="60px" />
-
-        <TextView
-            android:id="@+id/otrosText"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/poppins"
-            android:text="O Inicia sesión con"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <ImageButton
-                android:id="@+id/googleButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/google" />
-
-            <ImageButton
-                android:id="@+id/facebookButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/fb" />
-
-        </LinearLayout>
-
 
         <TextView
             android:id="@+id/nuevoUsuario"
@@ -174,6 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins"
+            android:layout_marginTop="45dp"
             android:text="Al registrarse o logearse, confirmas aceptar nuestros Términos de uso"
             android:textColor="@color/colorTextSubtittle"
             android:textSize="14dp" />
