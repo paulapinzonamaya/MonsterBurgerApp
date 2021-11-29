@@ -35,6 +35,8 @@
         <action
             android:id="@+id/action_orderFragment_to_orderDetailFragmentDialog"
             app:destination="@id/orderDetailFragmentDialog" />
+
+
     </fragment>
     <fragment
         android:id="@+id/navCommentsFragment"

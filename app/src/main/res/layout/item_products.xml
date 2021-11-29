@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_productos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    android:layout_margin="12dp"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="28dp"
+    card_view:cardElevation="6dp"
+    card_view:contentPadding="4dp"
+   >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/itemImageProductos"
+            android:layout_width="108dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_baseline_fastfood_24"/>
+
+        <TextView
+            android:id="@+id/itemtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/itemImageProductos"
+            android:layout_toRightOf="@+id/itemImageProductos"
+            android:text="Nombre"
+
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/precioProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemtitulo"
+            android:layout_toEndOf="@+id/itemImageProductos"
+            android:layout_toRightOf="@+id/itemImageProductos"
+            android:text="precio"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+      <!--  <Button
+            android:id="@+id/BtBuyProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/precioProducto"
+            android:layout_toEndOf="@+id/itemImageProductos"
+            android:layout_toRightOf="@+id/itemImageProductos" />
+
+-->
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

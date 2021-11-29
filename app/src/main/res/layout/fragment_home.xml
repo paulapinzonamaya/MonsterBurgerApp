@@ -1,243 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_row="2"
+    android:layout_column="0"
     tools:context=".view.ui.fragments.HomeFragment">
 
 
 
-    <ScrollView
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="169dp"
+        android:text="MENÚ"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="211dp"
+        android:layout_height="254dp"
+
+        android:layout_above="@+id/button2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="-65dp"
+        android:src="@drawable/bebidas" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="221dp"
+        android:layout_height="256dp"
+
+        android:layout_above="@+id/button4"
+        android:layout_marginBottom="-67dp"
+        android:src="@drawable/acompanamiento" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+
+        android:layout_above="@+id/imageView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="22dp"
+        android:text="Bebidas"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="159dp"
+        android:layout_toStartOf="@+id/button5"
+        android:text="Hamburguesas"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="232dp"
+        android:layout_height="216dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="161dp"
+        android:src="@drawable/hamburguesas" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="224dp"
+        android:layout_height="218dp"
+
+        android:layout_above="@+id/button5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-45dp"
+        android:src="@drawable/entradas" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="214dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="159dp"
+        android:text="Acompañamientos"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+
+        android:layout_above="@+id/imageView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="19dp"
+        android:layout_toStartOf="@+id/button2"
+        android:text="Entradas"
+        android:textColor="@color/white" />
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:layout_height="149dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/combos" />
 
-            <ImageButton
-                android:id="@+id/ubicacion"
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginStart="50dp"
-                android:backgroundTint="#F3ECEC"
-
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@android:drawable/bottom_bar" />
-
-            <ImageButton
-                android:id="@+id/ubicacion2"
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:backgroundTint="#F3ECEC"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="046dp"
-
-
-                app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-                app:srcCompat="@android:drawable/bottom_bar" />
-
-            <TextView
-                android:id="@+id/txtubicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
-                android:layout_marginTop="-115dp"
-                android:text="Ubicación" />
-
-            <TextView
-                android:id="@+id/txtsaludo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="122dp"
-                android:layout_marginTop="15dp"
-                android:text="Hola,Usuario"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ubicacion" />
-
-            <TextView
-                android:id="@+id/txtsaludo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="180dp"
-                android:layout_marginTop="0dp"
-                android:text="Buenos Dias!"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtsaludo" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="156dp"
-                android:layout_height="199dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginStart="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/bebidas" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="159dp"
-                android:layout_height="290dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/hamburguesas" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="167dp"
-                android:layout_height="269dp"
-                android:layout_marginTop="-280dp"
-                android:layout_marginStart="200dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/acompanamiento" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-80dp"
-                android:layout_marginStart="15dp"
-                android:text=" Hamburguesas "
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/bbebidas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-265dp"
-                android:layout_marginStart="15dp"
-                android:text="       Bebidas       "
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/bacompañamiento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-50dp"
-                android:layout_marginStart="210dp"
-                android:text="acompañamiento"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/nentradas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:layout_marginStart="230dp"
-                android:text="     Entradas     "
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/entradas"
-                android:layout_width="169dp"
-                android:layout_height="274dp"
-                android:layout_marginTop="-450dp"
-                android:layout_marginStart="200dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/entradas" />
-
-            <TextView
-                android:id="@+id/categorias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-260dp"
-                android:layout_marginStart="150dp"
-                android:text="CATEGORIAS"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="174dp" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="450dp"
-                android:layout_marginStart="150dp"
-                android:text="PROMOCIONES"
-
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="159dp" />
-
-            <ImageView
-                android:id="@+id/imagencombos"
-                android:layout_width="451dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="-110dp"
-                app:srcCompat="@drawable/combos" />
-
-            <TextView
-                android:id="@+id/buscar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="buscar"
-
-                android:layout_marginTop="-830dp"
-                android:layout_marginStart="180dp"/>
-
-            <TextView
-                android:id="@+id/sobrenosotros"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SOBRE NOSOTROS"
-                android:layout_marginTop="690dp"
-                android:layout_marginStart="140dp"/>
-
-            <TextView
-                android:id="@+id/sobrenosotros2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Restaurante Bogotano con especialidad en la preparacion de las hamburguesas mas deliciosas a excelentes precios"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"/>
-
-            <ImageView
-                android:id="@+id/imagenredes"
-                android:layout_width="330dp"
-                android:layout_height="365dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="30dp"
-                app:srcCompat="@drawable/redes" />
-
-            <TextView
-                android:id="@+id/calificanos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CALIFICACANOS"
-                android:layout_marginTop="-20dp"
-                android:layout_marginStart="150dp"/>
-
-            <ImageView
-                android:id="@+id/imagencalificanos"
-                android:layout_width="330dp"
-                android:layout_height="365dp"
-                android:layout_marginTop="-20dp"
-                android:layout_marginStart="30dp"
-                app:srcCompat="@drawable/calificanos" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="600dp"
-                android:layout_height="620dp"
-                android:layout_marginStart="-100dp"
-                android:layout_marginTop="-20dp"
-                app:srcCompat="@drawable/comentarios" />
-
-        </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+</RelativeLayout>

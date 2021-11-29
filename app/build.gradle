@@ -81,6 +81,8 @@ dependencies {
     api 'androidx.navigation:navigation-ui-ktx:2.3.3'
 
 
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
 
 
 }

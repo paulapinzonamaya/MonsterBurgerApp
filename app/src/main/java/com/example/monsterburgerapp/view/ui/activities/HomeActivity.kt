@@ -2,6 +2,7 @@ package com.example.monsterburgerapp.view.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.monsterburgerapp.R
@@ -9,8 +10,9 @@ import com.example.monsterburgerapp.databinding.ActivityHomeBinding
 import com.example.monsterburgerapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity : AppCompatActivity() {
 
+
+class HomeActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityHomeBinding
@@ -21,7 +23,19 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         configNav()
+
     }
+
+private fun replaceFragment(fragment: Fragment){
+
+    if(fragment != null){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragContent,fragment)
+        transaction.commit()
+    }
+
+
+}
 
 
 

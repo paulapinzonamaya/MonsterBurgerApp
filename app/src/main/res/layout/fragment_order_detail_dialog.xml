@@ -1,20 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragments.OrderDetailDialogFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Toolbar
+            android:id="@+id/toolbarProduct"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="?attr/actionBarSize">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="216dp"
-        android:layout_height="119dp"
-        android:text="Button" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="300dp"
+                    android:layout_height="500dp"
+                    android:layout_margin="@dimen/defaultLayoutMargin"
+                    app:cardCornerRadius="@dimen/cardCornerRadius"
+                    app:cardElevation="@dimen/cardElevation"
+                    android:layout_gravity="center_horizontal">
 
-</FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+
+
+                        <TextView
+                            android:id="@+id/itemTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="Producto 1"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/sizePriceProduct"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/itemImageProductos"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/acompanamiento"
+
+
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/fodDetalleProducto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="Deliciosas albondigas con queso al horno"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/sizePriceProduct" />
+
+                        <TextView
+                            android:id="@+id/precioProducto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$16.000"
+                            android:textSize="30dp"
+                            android:textColor="@color/black"
+                            android:gravity="center_horizontal"/>
+
+
+                        <Button
+                            android:id="@+id/fodBtBuyProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/defaultLayoutMargin"
+                            android:background="@color/primaryDarkColor"
+                            android:text="Agregar al carrito"
+                            android:textColor="@color/primaryTextColor"
+                            />
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

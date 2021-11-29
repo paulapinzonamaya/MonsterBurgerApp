@@ -5,10 +5,97 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.fragments.AdminFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/defaultLayoutMargin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Mi perfil"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/sizePriceProduct"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightAdminProduct"
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:layout_margin="@dimen/defaultLayoutMargin"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Nombre"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/sizePriceProduct"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Dirección"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/sizePriceProduct"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Teléfono"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/sizePriceProduct"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Correo"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/sizePriceProduct"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/navigate_edition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/navigate_edit"
+                        android:textColor="@color/white"
+
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </FrameLayout>
