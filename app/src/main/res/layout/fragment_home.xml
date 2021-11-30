@@ -206,7 +206,7 @@
                 android:layout_width="300dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/doshamburguesas"
+                android:src="@drawable/dosxuno"
                 android:layout_marginHorizontal="60dp"/>
             <TextView
                 android:layout_width="211dp"
@@ -232,11 +232,119 @@
                 android:layout_marginTop="-60dp"
                 android:layout_marginHorizontal="300dp"
                 android:background="#FA3C32"/>
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="150dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Sobre Nosotros"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="253dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Restaurante bogotano con especialidad en la preparacion de las hamburguesas mas deliciosas a los mejores precios. 8 años de experiencia nos respalda "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="150dp"
+                android:layout_marginTop="20dp"
+                android:text="Contactanos"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="140dp"
+                android:layout_marginTop="0dp"
+                android:text="Cra 8 b N 92a 67"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="100dp"
+                android:layout_marginTop="0dp"
+                android:text="mosnterburger@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="312dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="0dp"
+                android:text="Telefono: 26587465"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"/>
 
+            <TextView
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="0dp"
+                android:text="  WhatsApp: 3159788644"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="50dp"
+                android:text="siguenos en todas nuestras redes!"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/ButtonTwitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/fui_ic_twitter_bird_white_24dp"
+                android:background="#FA3C32"
+                android:layout_marginHorizontal="100dp"
+                android:layout_marginTop="20dp"/>
+
+            <ImageButton
+                android:id="@+id/ButtonFacebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/fui_ic_facebook_white_22dp"
+                android:background="@color/primaryColor"
+                android:layout_marginTop="-50dp"
+                android:layout_marginHorizontal="250dp"/>
+            <TextView
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="40dp"
+                android:text="Nuestra ubicacion a un clic"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <ImageButton
+                android:id="@+id/ButtonMaps"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/maps"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="150dp"/>
 
 
         </LinearLayout>
