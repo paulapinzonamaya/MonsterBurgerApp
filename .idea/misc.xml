@@ -36,21 +36,42 @@
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_order.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/layout/fragment_registro.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/paula/AndroidStudioProjects/MonsterBurgerApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_baseline_add_comment_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_baseline_comment_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.2203125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/drawable/ic_logo_background.xml" value="0.1125" />
-        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_coments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_admin.xml" value="0.1" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_admin_detail_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_carrito.xml" value="0.33" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_coments.xml" value="0.1" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_coments_detail_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_order.xml" value="0.14545454545454545" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_order_detail_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_products.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/fragment_registro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/item_comments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/layout/item_products.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/paula/OneDrive/Escritorio/MonsterBurgerApp/app/src/main/res/menu/bnv_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/activity_main.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/fragment_admin.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/fragment_carrito.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/fragment_coments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/fragment_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/item_comments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/item_products.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/nav_header.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/menu/bnv_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/paula/OneDrive/Escritorio/Nueva carpeta/MonsterBurgerApp/app/src/main/res/menu/navdrawer_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

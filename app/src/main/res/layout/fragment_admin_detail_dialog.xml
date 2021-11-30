@@ -5,10 +5,85 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.fragments.AdminDetailDialogFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MI PERFIL"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/etNameAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:hint="Nombre"
+                    android:inputType="textMultiLine"
+                    android:gravity="center_horizontal"/>
+
+
+
+                <EditText
+                    android:id="@+id/etAddressAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:hint="Direccion"
+                    android:inputType="textMultiLine"
+                    android:gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/etPhoneAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:hint="Telefono"
+                    android:inputType="textMultiLine"
+                    android:gravity="center_horizontal"/>
+                <EditText
+                    android:id="@+id/etEmailAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:hint="Correo"
+                    android:inputType="textMultiLine"
+                    android:gravity="center_horizontal"/>
+                <Button
+                    android:id="@+id/btSaveChanges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/primaryDarkColor"
+                    android:text="Guardar cambios"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_marginTop="@dimen/defaultLayoutMargin"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </FrameLayout>

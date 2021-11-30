@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
-    
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
 
         <Toolbar
             android:id="@+id/toolbarProduct"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -28,105 +30,92 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="5dp"
-                    android:layout_margin="25dp">
+                    android:layout_width="300dp"
+                    android:layout_height="500dp"
+                    android:layout_margin="@dimen/defaultLayoutMargin"
+                    app:cardCornerRadius="@dimen/cardCornerRadius"
+                    app:cardElevation="@dimen/cardElevation"
+                    android:layout_gravity="center_horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
+
+
+
+                        <TextView
+                            android:id="@+id/itemTitulo"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2.5"
-                            android:orientation="vertical"
-                            android:gravity="center_vertical">
+                            android:gravity="center_horizontal"
+                            android:text="Producto 1"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/sizePriceProduct"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/txtItemCommentsPlato"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/plato"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="5dp"
-                                android:fontFamily="@font/roboto"
-                                android:gravity="center|top"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
-                                android:textColor="@color/black" />
+                        <ImageView
+                            android:id="@+id/itemImageProductos"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/acompanamiento"
 
-                            <ImageView
-                                android:layout_width="120sp"
-                                android:layout_height="110sp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/albondigas" />
 
-                        </LinearLayout>
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
+                        <TextView
+                            android:id="@+id/fodDetalleProducto"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:orientation="vertical"
-                            android:layout_margin="5dp">
+                            android:gravity="center_horizontal"
+                            android:text="Deliciosas albondigas con queso al horno"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="@dimen/sizePriceProduct" />
 
-                            <TextView
-                                android:id="@+id/txtItemCommentsDescripcion"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto"
-                                android:gravity="center"
-                                android:text="@string/descripcion"
-                                android:layout_marginTop="15dp"
-                                android:textColor="@color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/precioProducto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$16.000"
+                            android:textSize="30dp"
+                            android:textColor="@color/black"
+                            android:gravity="center_horizontal"/>
 
-                            <TextView
-                                android:id="@+id/txtItemCommentsCantidad"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cantidad"
-                                android:fontFamily="@font/roboto"
-                                android:gravity="center|top"
-                                android:textSize="20sp"
-                                android:textColor="@color/black" />
 
-                            <TextView
-                                android:id="@+id/txtItemCommentsPrecio"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/precio"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/roboto"
-                                android:gravity="center|top"
-                                android:textSize="20sp"
-                                android:textColor="@color/black" />
+                        <Button
+                            android:id="@+id/fodBtBuyProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/defaultLayoutMargin"
+                            android:background="@color/primaryDarkColor"
+                            android:text="Agregar al carrito"
+                            android:textColor="@color/primaryTextColor"
+                            />
 
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnAgregar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:backgroundTint="@color/colorLaunch"
-                                android:text="@string/btnAgregar"
-                                android:textSize="14sp"
-                                android:textColor="@color/white"
-                                app:cornerRadius="60dp" />
 
-                        </LinearLayout>
                     </LinearLayout>
+
 
                 </androidx.cardview.widget.CardView>
 
+
             </LinearLayout>
+
+
         </ScrollView>
+
+
     </FrameLayout>
+
+
+
+
+
+
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

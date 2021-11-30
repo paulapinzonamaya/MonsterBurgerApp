@@ -23,18 +23,21 @@
         <action
             android:id="@+id/action_homeFragment_to_orderFragment"
             app:destination="@id/navOrderFragment" />
+        <action
+            android:id="@+id/action_navHomeFragment_to_carritoFragment"
+            app:destination="@id/carritoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/navOrderFragment"
+        android:id="@+id/carritoFragment"
         android:name="com.example.monsterburgerapp.view.ui.fragments.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" >
-        <action
-            android:id="@+id/action_orderFragment_to_comentsFragment"
-            app:destination="@id/navCommentsFragment" />
+
         <action
             android:id="@+id/action_orderFragment_to_orderDetailFragmentDialog"
             app:destination="@id/orderDetailFragmentDialog" />
+
+
     </fragment>
     <fragment
         android:id="@+id/navCommentsFragment"
@@ -65,6 +68,15 @@
         android:name="com.example.monsterburgerapp.view.ui.fragments.AdminDetailDialogFragment"
         android:label="AdminDetailFragmentDialog"
         tools:layout="@layout/fragment_admin_detail_dialog"/>
+    <fragment
+        android:id="@+id/navOrderFragment"
+        android:name="com.example.monsterburgerapp.view.ui.fragments.CarritoFragment"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito">
+        <action
+            android:id="@+id/action_navOrderFragment_to_navCommentsFragment"
+            app:destination="@id/navCommentsFragment" />
+    </fragment>
 
 
 

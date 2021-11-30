@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monsterburgerapp.R
+import com.example.monsterburgerapp.model.Comentario
+import com.example.monsterburgerapp.view.adapter.ComentarioAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +26,16 @@ class ComentsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    var comentarios= listOf<Comentario>(
+        Comentario("Brad",5,"La mejor tienda de hamburguesas"),
+        Comentario("Angelina",5,"La mejor tienda de hamburguesas")
+
+
+
+    )
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,6 +51,27 @@ class ComentsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_coments, container, false)
     }
+
+
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var rvComments= view.findViewById<RecyclerView>(R.id.rvComments)
+        rvComments.layoutManager = LinearLayoutManager(requireActivity())
+
+        val adapter = ComentarioAdapter(comentarios)
+        rvComments.adapter = adapter
+
+
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+
+
+
+
+
+
 
     companion object {
         /**
