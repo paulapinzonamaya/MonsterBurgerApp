@@ -1,20 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragments.OrderDetailDialogFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+        <Toolbar
+            android:id="@+id/toolbarProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="?attr/actionBarSize">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="216dp"
-        android:layout_height="119dp"
-        android:text="Button" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="5dp"
+                    android:layout_margin="25dp">
 
-</FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/txtItemCommentsPlato"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plato"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center|top"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="120sp"
+                                android:layout_height="110sp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/albondigas" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+
+                            <TextView
+                                android:id="@+id/txtItemCommentsDescripcion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/descripcion"
+                                android:layout_marginTop="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtItemCommentsCantidad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cantidad"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center|top"
+                                android:textSize="20sp"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/txtItemCommentsPrecio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/precio"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center|top"
+                                android:textSize="20sp"
+                                android:textColor="@color/black" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAgregar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:backgroundTint="@color/colorLaunch"
+                                android:text="@string/btnAgregar"
+                                android:textSize="14sp"
+                                android:textColor="@color/white"
+                                app:cornerRadius="60dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
