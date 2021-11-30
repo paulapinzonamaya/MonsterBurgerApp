@@ -3,17 +3,13 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="60dp">
 
-        <Toolbar
-            android:id="@+id/toolbarProduct"
-            android:layout_width="305dp"
-            android:layout_height="wrap_content"/>
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,23 +23,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_margin="25dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="500dp"
                     android:layout_margin="@dimen/defaultLayoutMargin"
-                    app:cardCornerRadius="@dimen/cardCornerRadius"
+                    app:cardCornerRadius="25dp"
                     app:cardElevation="@dimen/cardElevation"
                     android:layout_gravity="center_horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="25dp"
                         android:orientation="vertical">
-
-
-
 
                         <TextView
                             android:id="@+id/itemTitulo"
@@ -59,11 +55,8 @@
                             android:id="@+id/itemImageProductos"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/acompanamiento"
-
-
                             android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            />
+                            android:layout_height="100dp" />
 
                         <TextView
                             android:id="@+id/fodDetalleProducto"
@@ -83,17 +76,17 @@
                             android:textColor="@color/black"
                             android:gravity="center_horizontal"/>
 
-
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/fodBtBuyProduct"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="@dimen/defaultLayoutMargin"
-                            android:background="@color/primaryDarkColor"
-                            android:text="Agregar al carrito"
-                            android:textColor="@color/primaryTextColor"
-                            />
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/colorLaunch"
+                            android:text="agregar al carrito"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            app:cornerRadius="60px" />
 
 
                     </LinearLayout>
@@ -109,12 +102,6 @@
 
 
     </FrameLayout>
-
-
-
-
-
-
 
 
 
