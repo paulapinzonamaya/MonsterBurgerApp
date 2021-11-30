@@ -17,6 +17,8 @@ import com.example.monsterburgerapp.view.ui.fragments.ComentsFragment
 import com.example.monsterburgerapp.view.ui.fragments.HomeFragment
 import com.example.monsterburgerapp.view.ui.fragments.OrderFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 
 
@@ -81,25 +83,3 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-/*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding =  ActivityHomeBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-       // configNav()
-
-    }
-
-
-
-
-
-    fun configNav(){
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragContent) as NavHostFragment
-        val navController = navHostFragment.navController
-        findViewById<BottomNavigationView>(R.id.bnvMenu).setupWithNavController(navController)
-    }
-
- */
-}

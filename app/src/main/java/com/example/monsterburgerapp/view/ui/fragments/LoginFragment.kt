@@ -15,9 +15,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-
-
-
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -42,9 +39,6 @@ class loginFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
 
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -56,8 +50,6 @@ class loginFragment : Fragment() {
         auth = Firebase.auth
 
             }
-
-
 
 
     override fun onCreateView(
@@ -98,8 +90,6 @@ class loginFragment : Fragment() {
             signIn(view,email.text.toString(),pass.text.toString())
 
 
-
-
         }
         btnRegistro.setOnClickListener{
                     view:View ->
@@ -108,17 +98,12 @@ class loginFragment : Fragment() {
                 view.findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
             }
 
-
     }
 
     override fun onStart() {
         super.onStart()
 
     }
-
-
-
-
 
 
     fun signIn (view:View,email:String, password:String){
@@ -143,7 +128,6 @@ class loginFragment : Fragment() {
 
                 }
             }
-
 
     }
 
