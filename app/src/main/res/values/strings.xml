@@ -2,4 +2,13 @@
     <string name="app_name">MonsterBurgerApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fecha">20/05/2021</string>
+    <string name="hora">15:22</string>
+    <string name="nombreUsuario">Daniel</string>
+    <string name="comentario">Buena comida</string>
+    <string name="plato">Fiesta de albondigas</string>
+    <string name="descripcion">x 10 Unidades</string>
+    <string name="cantidad">1</string>
+    <string name="precio">$ 16.000</string>
+    <string name="btnAgregar">Agregar</string>
 </resources>
