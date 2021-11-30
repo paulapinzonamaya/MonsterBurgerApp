@@ -32,17 +32,15 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
 
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val binding = DataBindingUtil.setContentView<ActivityHomeBinding>(this,
-            R.layout.activity_home)
+        val binding = DataBindingUtil.setContentView<ActivityHomeBinding>(
+            this,
+            R.layout.activity_home
+        )
 
         drawerLayout = binding.drawerLayout
 
@@ -51,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
 
         var bottonNavigation = findViewById<BottomNavigationView>(R.id.bnvMenu)
         bottonNavigation.setOnItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.navHomeFragment -> replaceFragment(homeFragment)
                 R.id.navOrderFragment -> replaceFragment(orderFragment)
                 R.id.navCommentsFragment -> replaceFragment(commentsFragment)
@@ -72,14 +70,14 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    private fun replaceFragment(fragment: Fragment){
-        if(fragment != null){
+    private fun replaceFragment(fragment: Fragment) {
+        if (fragment != null) {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragContent, fragment)
             transaction.commit()
 
         }
     }
-
+}
 
 
