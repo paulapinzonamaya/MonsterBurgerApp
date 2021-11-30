@@ -33,7 +33,7 @@
             android:layout_height="50dp"
 
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_info_24" />
+            android:src="@drawable/usuario" />
 
     </LinearLayout>
 

@@ -22,9 +22,9 @@
                 android:layout_height="match_parent"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
-               <include
+                <include
                     android:id="@+id/toolbar_p"
-                    layout="@layout/toolbar"/>
+                    layout="@layout/toolbar" />
                 
 
 
