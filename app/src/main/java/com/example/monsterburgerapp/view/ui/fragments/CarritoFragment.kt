@@ -79,6 +79,8 @@ class CarritoFragment : Fragment() {
             productos ->
             val adapter = ProductoAdapter(productos,childFragmentManager)
             rvProductosCarrito.adapter = adapter
+
+
         }
 
     }
