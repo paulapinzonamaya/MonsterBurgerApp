@@ -11,4 +11,10 @@
     <string name="cantidad">1</string>
     <string name="precio">$ 16.000</string>
     <string name="btnAgregar">Agregar</string>
+    <string name="nombreUser">nombreUser</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="nombre">Nombre</string>
+    <string name="direccion">Dirección</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="correo">Correo</string>
 </resources>
