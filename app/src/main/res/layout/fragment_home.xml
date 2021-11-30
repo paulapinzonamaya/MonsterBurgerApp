@@ -20,9 +20,9 @@
 
             <Button
                 android:id="@+id/Button_ubicacion"
-                android:layout_width="350dp"
+                android:layout_width="310dp"
                 android:layout_height="50dp"
-                android:layout_marginHorizontal="29dp"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="10dp"
                 android:text="Ubicación"
                 android:textColor="@color/black"
@@ -51,20 +51,20 @@
 
             <EditText
                 android:id="@+id/buscador"
-                android:layout_width="300dp"
-                android:layout_height="33dp"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="0dp"
                 android:textColor="@color/black"
                 android:hint="Buscar"
-                android:inputType="date"
+                android:inputType="textCapCharacters"
                 android:background="#ACACAC" />
 
             <ImageButton
                 android:id="@+id/Button_Qr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="330dp"
+                android:layout_marginStart="320dp"
                 android:layout_marginTop="-38dp"
                 android:backgroundTint="#ACACAC"
                 android:src="@drawable/ic_baseline_qr_code_scanner_24" />
@@ -73,7 +73,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:layout_marginHorizontal="160dp"
+                android:layout_marginHorizontal="140dp"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:text="Categorias"
@@ -86,12 +86,12 @@
                 android:layout_height="160dp"
                 android:src="@drawable/entradas"
                 android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="30dp"/>
+                android:layout_marginHorizontal="10dp"/>
             <Button
                 android:id="@+id/button_entradas"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="-30dp"
                 android:text="Entradas"
                 android:textColor="@color/white"
@@ -102,7 +102,7 @@
                 android:id="@+id/bebidas"
                 android:layout_width="160dp"
                 android:layout_height="166dp"
-                android:layout_marginHorizontal="215dp"
+                android:layout_marginHorizontal="190dp"
                 android:layout_marginTop="-180dp"
                 android:src="@drawable/bebidas" />
             <Button
@@ -114,14 +114,14 @@
                 android:textSize="13dp"
                 android:textStyle="bold"
                 android:layout_marginTop="-35dp"
-                android:layout_marginHorizontal="220dp"/>
+                android:layout_marginHorizontal="190dp"/>
 
             <ImageView
                 android:id="@+id/hamburguesas"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="30dp"
+                android:layout_marginHorizontal="10dp"
 
                 android:src="@drawable/hamburguesas" />
 
@@ -129,7 +129,7 @@
                 android:id="@+id/button_hamburguesa"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="-20dp"
                 android:text="Hamburguesas"
                 android:textColor="@color/white"
@@ -142,7 +142,7 @@
                 android:layout_height="160dp"
                 android:src="@drawable/acompanamiento"
                 android:layout_marginTop="-190dp"
-                android:layout_marginHorizontal="215dp"/>
+                android:layout_marginHorizontal="180dp"/>
             <Button
                 android:id="@+id/button_bebidas"
                 android:layout_width="170dp"
@@ -152,12 +152,12 @@
                 android:textSize="13dp"
                 android:textStyle="bold"
                 android:layout_marginTop="-18dp"
-                android:layout_marginHorizontal="220dp"/>
+                android:layout_marginHorizontal="190dp"/>
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="160dp"
+                android:layout_marginHorizontal="130dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
                 android:text="Promociones"
@@ -171,12 +171,12 @@
                 android:layout_height="250dp"
                 android:layout_marginTop="-20dp"
                 android:src="@drawable/combohamburguesa"
-                android:layout_marginHorizontal="60dp"/>
+                android:layout_marginHorizontal="35dp"/>
 
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="65dp"
+                android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="-40dp"
                 android:fontFamily="@font/poppins"
                 android:text="Combo de hamburguesa tradicional con papas a la francesa y gaseosa "
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:text="$18.000"
                 android:textStyle="italic"
-                android:layout_marginHorizontal="65dp"/>
+                android:layout_marginHorizontal="55dp"/>
 
 
             <ImageButton
@@ -198,20 +198,21 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_shopping_cart_24"
                 android:layout_marginTop="-60dp"
-                android:layout_marginHorizontal="300dp"
+                android:layout_marginHorizontal="290dp"
                 android:background="#FA3C32"/>
 
             <ImageView
                 android:id="@+id/combo2"
                 android:layout_width="300dp"
                 android:layout_height="250dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/dosxuno"
-                android:layout_marginHorizontal="60dp"/>
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/dosxuno" />
+
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="65dp"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="-10dp"
                 android:fontFamily="@font/poppins"
                 android:text=" 2 x 1 Hamburguesas artesanales acompañadas de una deliciosa limonada "
@@ -230,12 +231,12 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_shopping_cart_24"
                 android:layout_marginTop="-60dp"
-                android:layout_marginHorizontal="300dp"
+                android:layout_marginHorizontal="290dp"
                 android:background="#FA3C32"/>
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="150dp"
+                android:layout_marginHorizontal="120dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
                 android:text="Sobre Nosotros"
@@ -246,7 +247,7 @@
             <TextView
                 android:layout_width="253dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
                 android:text="Restaurante bogotano con especialidad en la preparacion de las hamburguesas mas deliciosas a los mejores precios. 8 años de experiencia nos respalda "
@@ -256,7 +257,7 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="150dp"
+                android:layout_marginHorizontal="130dp"
                 android:layout_marginTop="20dp"
                 android:text="Contactanos"
                 android:textColor="@color/black"
@@ -265,7 +266,7 @@
             <TextView
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="140dp"
+                android:layout_marginHorizontal="110dp"
                 android:layout_marginTop="0dp"
                 android:text="Cra 8 b N 92a 67"
                 android:textColor="@color/black"
@@ -274,7 +275,7 @@
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="100dp"
+                android:layout_marginHorizontal="70dp"
                 android:layout_marginTop="0dp"
                 android:text="mosnterburger@gmail.com"
                 android:textColor="@color/black"
@@ -283,7 +284,7 @@
             <TextView
                 android:layout_width="312dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="60dp"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="0dp"
                 android:text="Telefono: 26587465"
                 android:textColor="@color/black"
@@ -293,7 +294,7 @@
             <TextView
                 android:layout_width="236dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="0dp"
                 android:text="  WhatsApp: 3159788644"
                 android:textColor="@color/black"
@@ -303,7 +304,7 @@
             <TextView
                 android:layout_width="337dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="60dp"
+                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="50dp"
                 android:text="siguenos en todas nuestras redes!"
                 android:textColor="@color/black"
@@ -316,7 +317,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/fui_ic_twitter_bird_white_24dp"
                 android:background="#FA3C32"
-                android:layout_marginHorizontal="100dp"
+                android:layout_marginHorizontal="70dp"
                 android:layout_marginTop="20dp"/>
 
             <ImageButton
@@ -326,11 +327,11 @@
                 android:src="@drawable/fui_ic_facebook_white_22dp"
                 android:background="@color/primaryColor"
                 android:layout_marginTop="-50dp"
-                android:layout_marginHorizontal="250dp"/>
+                android:layout_marginHorizontal="220dp"/>
             <TextView
                 android:layout_width="337dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="35dp"
+                android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="40dp"
                 android:text="Nuestra ubicacion a un clic"
                 android:textColor="@color/black"
@@ -344,7 +345,7 @@
                 android:layout_height="120dp"
                 android:src="@drawable/maps"
                 android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="150dp"/>
+                android:layout_marginHorizontal="120dp"/>
 
 
         </LinearLayout>
