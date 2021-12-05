@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monsterburgerapp.R
+import com.example.monsterburgerapp.view.adapter.ProductoAdapter
+import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
@@ -14,17 +18,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
-
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [BebidasFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class BebidasFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private val viewModel: ProductosListViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,38 +43,37 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
 
+        viewModel.getBebidas()
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_order, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        var rvOrder = view.findViewById<RecyclerView>(R.id.rvOrder)
+        rvOrder.layoutManager = LinearLayoutManager(requireActivity())
 
-        var button_entradas = view.findViewById<Button>(R.id.button_entradas)
-        button_entradas.setOnClickListener {
-                view:View->
-            replaceFragment(OrderFragment())
+
+        viewModel.productosModel.observe(viewLifecycleOwner) {
+
+                productos ->
+
+            val adapter = ProductoAdapter(productos, childFragmentManager)
+            rvOrder.adapter = adapter
         }
 
-
-
-        var button_bebidas = view.findViewById<Button>(R.id.button_bebidas)
-        button_bebidas.setOnClickListener {
+        /*
+        var fab = view.findViewById<FloatingActionButton>(R.id.botonAddCar)
+        fab.setOnClickListener {
                 view:View->
-            replaceFragment(BebidasFragment())
+            replaceFragment(CarritoFragment())
         }
-
-
-
-
-
-
-
         super.onViewCreated(view, savedInstanceState)
     }
 
 
+         */
+    }
     private fun replaceFragment(fragment: Fragment){
 
         if(fragment != null){
@@ -79,7 +83,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -87,12 +90,12 @@ class HomeFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
+         * @return A new instance of fragment OrderFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
+            OrderFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

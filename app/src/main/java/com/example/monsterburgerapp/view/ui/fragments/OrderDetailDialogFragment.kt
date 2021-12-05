@@ -9,8 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.FragmentOrderDetailDialogBinding
+import com.example.monsterburgerapp.view.adapter.ProductoAdapter
+import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +30,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class OrderDetailDialogFragment : DialogFragment() {
 
-    private var id:Int?=null
+    private var id:String?=null
     private var nombre:String?=null
     private var precio:Int?=null
     private var descripcion:String?=null
@@ -32,7 +38,7 @@ class OrderDetailDialogFragment : DialogFragment() {
 
 
     fun newInstance(
-        id:Int,
+        id:String,
         nombre:String,
         precio:Int,
         descripcion:String,
@@ -41,7 +47,7 @@ class OrderDetailDialogFragment : DialogFragment() {
         var f = OrderDetailDialogFragment()
 
         val args = Bundle()
-        args.putInt("id",id)
+        args.putString("id",id)
         args.putString("nombre",nombre)
         args.putInt("precio",precio)
         args.putString("descripcion", descripcion)
@@ -63,7 +69,7 @@ class OrderDetailDialogFragment : DialogFragment() {
         arguments?.let {
             //param1 = it.getString(ARG_PARAM1)
             //param2 = it.getString(ARG_PARAM2)
-            id = it.getInt("id")
+            id = it.getString("id")
             nombre = it.getString("nombre")
             precio = it.getInt("precio")
             descripcion=it.getString("descripcion")
@@ -110,8 +116,8 @@ class OrderDetailDialogFragment : DialogFragment() {
                 }
             }
 
-            //dismiss()
-            Toast.makeText(requireContext(),"Producto agregado al carrito", Toast.LENGTH_LONG)
+            dismiss()
+            Toast.makeText(requireContext(),"Producto agregado al carrito", Toast.LENGTH_LONG).show()
 
         }
     }

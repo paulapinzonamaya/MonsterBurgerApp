@@ -16,7 +16,13 @@ class ProductosListViewModel: ViewModel() {
     }
 
     fun getProductos(){
-        var currentProductoList =  productoRepository.getProductos()
-        productosModel.postValue(currentProductoList)
+        var currentProductoList =  productoRepository.getProductos(productosModel)
+
     }
+
+    fun getBebidas(){
+        var currentProductoList =  productoRepository.getBebidas(productosModel)
+
+    }
+
 }

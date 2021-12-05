@@ -14,59 +14,60 @@ import com.example.monsterburgerapp.model.Producto
 import com.example.monsterburgerapp.view.ui.fragments.OrderDetailDialogFragment
 
 
+
 class ProductoAdapter (val productoList:List<Producto>, val fragmentManager: FragmentManager ): RecyclerView.Adapter<ProductoAdapter.ProductoHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoHolder {
 
-            var layoutInflater= LayoutInflater.from(parent.context)
+        var layoutInflater= LayoutInflater.from(parent.context)
 
-            return ProductoHolder(layoutInflater.inflate(R.layout.item_products, parent, false), fragmentManager)
+        return ProductoHolder(layoutInflater.inflate(R.layout.item_products, parent, false), fragmentManager)
 
-        }
+    }
 
-        override fun onBindViewHolder(holder: ProductoHolder, position: Int) {
-            holder.render(productoList[position])
-        }
+    override fun onBindViewHolder(holder: ProductoHolder, position: Int) {
+        holder.render(productoList[position])
+    }
 
-        override fun getItemCount(): Int {
-            return productoList.size
-        }
-
-
-
-        class ProductoHolder(val view: View,val fragmentManager: FragmentManager): RecyclerView.ViewHolder(view){
-
-            fun render(producto: Producto){
-
-                var card_view_productos = view.findViewById<CardView>(R.id.card_view_productos)
-                var itemImageProductos = view.findViewById<ImageView>(R.id.itemImageProductos)
-                var itemtitulo = view.findViewById<TextView>(R.id.itemtitulo)
-                var precioProducto = view.findViewById<TextView>(R.id.precioProducto)
+    override fun getItemCount(): Int {
+        return productoList.size
+    }
 
 
-                itemImageProductos.setImageResource(R.drawable.ic_baseline_person_24)
-                itemtitulo.text = producto.nombre
-                precioProducto.text = producto.precio.toString()
+
+    class ProductoHolder(val view: View,val fragmentManager: FragmentManager): RecyclerView.ViewHolder(view){
+
+        fun render(producto: Producto){
+
+            var card_view_productos = view.findViewById<CardView>(R.id.card_view_productos)
+            var itemImageProductos = view.findViewById<ImageView>(R.id.itemImageProductos)
+            var itemtitulo = view.findViewById<TextView>(R.id.itemtitulo)
+            var precioProducto = view.findViewById<TextView>(R.id.precioProducto)
 
 
-                card_view_productos.setOnClickListener{
+            itemImageProductos.setImageResource(R.drawable.ic_baseline_person_24)
+            itemtitulo.text = producto.nombre
+            precioProducto.text = producto.precio.toString()
+
+
+            card_view_productos.setOnClickListener{
                     view:View->
-                        var dialogFragment =  OrderDetailDialogFragment().newInstance(
+                var dialogFragment =  OrderDetailDialogFragment().newInstance(
 
-                            producto.id,
-                            producto.nombre,
-                            producto.precio,
-                            producto.descripcion,
-                            producto.imageUrl
-                        )
-                        dialogFragment.show(fragmentManager, "prueba")
-
-                }
+                    producto.id,
+                    producto.nombre,
+                    producto.precio,
+                    producto.descripcion,
+                    producto.imageUrl
+                )
+                dialogFragment.show(fragmentManager, "prueba")
 
             }
 
-
         }
 
+
     }
+
+}
 

@@ -12,13 +12,11 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.ActivityHomeBinding
 import com.example.monsterburgerapp.databinding.ActivityMainBinding
-import com.example.monsterburgerapp.view.ui.fragments.AdminFragment
-import com.example.monsterburgerapp.view.ui.fragments.ComentsFragment
-import com.example.monsterburgerapp.view.ui.fragments.HomeFragment
-import com.example.monsterburgerapp.view.ui.fragments.OrderFragment
+import com.example.monsterburgerapp.view.ui.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+
 
 
 
@@ -28,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
     private val orderFragment = OrderFragment()
     private val commentsFragment = ComentsFragment()
     private val adminFragment = AdminFragment()
+    private val carritoFragment = CarritoFragment()
 
     private lateinit var drawerLayout: DrawerLayout
 
@@ -47,11 +46,13 @@ class HomeActivity : AppCompatActivity() {
 
         replaceFragment(homeFragment)
 
+
+
         var bottonNavigation = findViewById<BottomNavigationView>(R.id.bnvMenu)
         bottonNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navHomeFragment -> replaceFragment(homeFragment)
-                R.id.navOrderFragment -> replaceFragment(orderFragment)
+                R.id.navOrderFragment -> replaceFragment(carritoFragment)
                 R.id.navCommentsFragment -> replaceFragment(commentsFragment)
                 R.id.navAdminFragment -> replaceFragment(adminFragment)
 

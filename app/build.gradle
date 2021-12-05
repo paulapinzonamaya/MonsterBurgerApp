@@ -94,5 +94,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
 
-
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 }

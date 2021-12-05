@@ -7,7 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,20 +44,20 @@ class CarritoFragment : Fragment() {
         }
 
 
-    var sharedPref:SharedPreferences=requireActivity().getPreferences(Context.MODE_PRIVATE)
-    var carrito_ids:String? = sharedPref.getString("carrito_ids","Default")
-    var carritoIdsArr:List<Int> = listOf()
+        var sharedPref:SharedPreferences=requireActivity().getPreferences(Context.MODE_PRIVATE)
+        var carrito_ids:String? = sharedPref.getString("carrito_ids","Default")
+        var carritoIdsArr:List<String> = listOf()
 
-    if(carrito_ids != "Default" ){
-        carritoIdsArr = carrito_ids?.split(",")?.map{it.toInt()}!!
+        if(carrito_ids != "Default" ){
+            carritoIdsArr = carrito_ids?.split(",")!!
 
-    }
-        println(">>>>>CarritoIdsArr ${carritoIdsArr}")
+        }
+        println(">>>><>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>CarritoIdsArr ${carritoIdsArr}")
 
 
         viewModel.getProductosByIds(carritoIdsArr)
 
-}
+    }
 
 
     override fun onCreateView(
@@ -69,21 +72,61 @@ class CarritoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-    var rvProductosCarrito = view.findViewById<RecyclerView>(R.id.rvProductosCarrito)
+        var rvProductosCarrito = view.findViewById<RecyclerView>(R.id.rvProductosCarrito)
+
+
+        var textViewTotalaPagar = view.findViewById<TextView>(R.id.textViewTotalaPagar)
+        var buttonPagar = view.findViewById<Button>(R.id.buttonPagar)
+
 
         rvProductosCarrito.layoutManager = LinearLayoutManager(requireActivity())
 
 
         viewModel.productosModel.observe(viewLifecycleOwner){
 
-            productos ->
+                productos ->
             val adapter = ProductoAdapter(productos,childFragmentManager)
             rvProductosCarrito.adapter = adapter
+
+
+            var totalcount = 0
+            productos.forEach{
+                    p -> totalcount += p.precio}
+            textViewTotalaPagar.text = "$"+totalcount.toString()
+
+        }
+
+        buttonPagar.setOnClickListener{
+                view:View ->
+
+            var sharedPref:SharedPreferences=requireActivity().getPreferences(Context.MODE_PRIVATE)
+
+
+            var editor = sharedPref.edit()
+            editor.remove("carrito_ids")
+            editor.apply()
+
+
+            Toast.makeText(requireActivity(), "Gracias por tu compra", Toast.LENGTH_SHORT).show()
+
+            replaceFragment(CarritoFragment())
+
 
 
         }
 
     }
+
+
+    private fun replaceFragment(fragment: Fragment){
+
+        if(fragment != null){
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragContent,fragment)
+            transaction.commit()
+        }
+    }
+
 
     companion object {
         /**

@@ -65,13 +65,15 @@ class OrderFragment : Fragment() {
             val adapter = ProductoAdapter(productos, childFragmentManager)
             rvOrder.adapter = adapter
         }
-
+/*
         var fab = view.findViewById<FloatingActionButton>(R.id.botonAddCar)
         fab.setOnClickListener {
                 view:View->
             replaceFragment(CarritoFragment())
         }
         super.onViewCreated(view, savedInstanceState)
+
+ */
     }
 
     private fun replaceFragment(fragment: Fragment){
