@@ -1,11 +1,17 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.monsterburgerapp.R
+import com.example.monsterburgerapp.databinding.FragmentAdminBinding
+import com.example.monsterburgerapp.model.DBHelper
+import com.example.monsterburgerapp.model.Tables
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,13 +28,32 @@ class AdminFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var informacionDBHelper: DBHelper
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        informacionDBHelper = DBHelper(requireActivity())
+
+        val db: SQLiteDatabase = informacionDBHelper.readableDatabase
+        val cursor =
+            db.rawQuery("SELECT * FROM" + Tables.information["TABLE_NAME"] + " WHERE id=1", null)
+
+        if (!cursor.moveToFirst()) {
+            informacionDBHelper.insert(
+                "nombre",
+                "dirección",
+                "email@ejemplo.com",
+                "teléfono",
+
+                )
+        }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +62,47 @@ class AdminFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin, container, false)
     }
+
+    // La forma como explico el profesor
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var binding = FragmentAdminBinding.bind(view)
+        val button = view.findViewById<Button>(R.id.navigate_edition)
+
+        val db: SQLiteDatabase = informacionDBHelper.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM" + Tables.information["TABLE_NAME"], null)
+
+
+        if (cursor.moveToFirst()){
+            do {
+                binding.etNameAdmin.setText(cursor.getString(1).toString())
+                println(">> ${cursor.getString(1).toString()} ")
+                binding.etAddressAdmin.setText(cursor.getString(2).toString())
+                binding.etPhoneAdmin.setText(cursor.getString(3).toString())
+                binding.etEmailAdmin.setText(cursor.getString(4).toString())
+            }while (cursor.moveToNext())
+        }
+
+        button?.setOnClickListener {
+
+            var nombre = binding.etNameAdmin.text.toString()
+            var direccion = binding.etAddressAdmin.text.toString()
+            var telefono = binding.etPhoneAdmin.text.toString()
+            var correo = binding.etEmailAdmin.text.toString()
+
+            var dialogFragment = AdminDetailDialogFragment().newInstance(
+                nombre,
+                direccion,
+                telefono,
+                correo
+            )
+            dialogFragment.show(childFragmentManager, tag: "AdminDetailDialogFragment")
+        }
+    }
+
+
+
 
     companion object {
         /**

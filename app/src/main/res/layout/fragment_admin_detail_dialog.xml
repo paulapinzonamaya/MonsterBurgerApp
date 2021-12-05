@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.fragments.AdminDetailDialogFragment">
 
 
@@ -14,12 +15,17 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            android:layout_margin="25dp">
 
-            <LinearLayout
+
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="25dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -32,57 +38,66 @@
                     />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/ibPhotoAdmin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:src="@tools:sample/avatars"
                     android:layout_gravity="center_horizontal"/>
+
                 <EditText
                     android:id="@+id/etNameAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center_horizontal"
                     android:hint="Nombre"
                     android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
-
+                    android:gravity="center"/>
 
 
                 <EditText
                     android:id="@+id/etAddressAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
                     android:hint="Direccion"
                     android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center"/>
+
+
                 <EditText
                     android:id="@+id/etPhoneAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:layout_marginTop="10dp"
                     android:hint="Telefono"
                     android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center"/>
+
                 <EditText
                     android:id="@+id/etEmailAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:layout_marginTop="10dp"
                     android:hint="Correo"
                     android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
-                <Button
-                    android:id="@+id/btSaveChanges"
-                    android:layout_width="wrap_content"
+                    android:gravity="center"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btSaveAdmin"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/primaryDarkColor"
+                    android:backgroundTint="@color/colorLaunch"
                     android:text="Guardar cambios"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"/>
+                    android:textColor="@color/white"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="8dp"
+                    app:cornerRadius="60px"/>
 
-            </LinearLayout>
+
+        </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
