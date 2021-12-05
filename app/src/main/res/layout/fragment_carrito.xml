@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.fragments.CarritoFragment">
 
 
@@ -12,46 +13,46 @@
         android:layout_height="match_parent"/>
 
 
-
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="2dp"
-        android:orientation="horizontal">
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
 
         <TextView
             android:id="@+id/textViewTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:fontFamily="@font/poppins"
+            android:layout_marginRight="40dp"
             android:textSize="30dp"
+            android:textStyle="bold"
             android:text="Total" />
 
         <TextView
             android:id="@+id/textViewTotalaPagar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginRight="120dp"
             android:fontFamily="@font/poppins"
-            android:textSize="30dp"
             android:text="$0"
-            android:gravity="right"/>
-        <Button
+            android:textSize="30dp" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonPagar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:fontFamily="@font/poppins"
-
             android:text="Pagar"
-            android:textColor="@color/white" />
-
-
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorLaunch"
+            app:cornerRadius="60px" />
 
 
     </LinearLayout>
-
 
 </RelativeLayout>

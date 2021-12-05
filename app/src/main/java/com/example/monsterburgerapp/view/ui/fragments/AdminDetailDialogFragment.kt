@@ -1,11 +1,16 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.monsterburgerapp.R
+import com.example.monsterburgerapp.databinding.FragmentAdminDetailDialogBinding
+import com.example.monsterburgerapp.model.DBHelper
+import com.example.monsterburgerapp.model.Tables
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,12 +27,46 @@ class AdminDetailDialogFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var nombre:String
+    private lateinit var direccion:String
+    private lateinit var telefono:String
+    private lateinit var correo:String
+
+    private lateinit var informacionDBHelper: DBHelper
+
+    fun newInstance(
+        nombre:String,
+        direccion:String,
+        telefono:String,
+        correo:String,
+    ):AdminDetailDialogFragment {
+
+        val f = AdminDetailDialogFragment()
+
+        val args = Bundle()
+        args.putString("nombre", nombre)
+        args.putString("direccion", direccion)
+        args.putString("telefono", telefono)
+        args.putString("correo", correo)
+
+        f.arguments = args
+
+        return f
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+            nombre = it.getString("nombre").toString()
+            direccion = it.getString("direccion").toString()
+            telefono = it.getString("telefono").toString()
+            correo = it.getString("correo").toString()
+
         }
+
+        informacionDBHelper = DBHelper(requireActivity())
     }
 
     override fun onCreateView(
@@ -37,6 +76,58 @@ class AdminDetailDialogFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin_detail_dialog, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var binding = FragmentAdminDetailDialogBinding.bind(view)
+
+        binding.ibPhotoAdmin.setImageResource(R.drawable.ic_baseline_person_24)
+        binding.etNameAdmin.setText(nombre)
+        binding.etAddressAdmin.setText(direccion)
+        binding.etPhoneAdmin.setText(telefono)
+        binding.etEmailAdmin.setText(correo)
+
+        //Paso 10. Configurando el almacenamiento de valores
+        binding.btSaveAdmin.setOnClickListener {
+
+            if (binding.etNameAdmin.text.isNotEmpty() &&
+                binding.etAddressAdmin.text.isNotEmpty() &&
+                binding.etPhoneAdmin.text.isNotEmpty() &&
+                binding.etEmailAdmin.text.isNotEmpty()) {
+
+
+                informacionDBHelper.edit(1,
+                    binding.etNameAdmin.text.toString(),
+                    binding.etAddressAdmin.text.toString(),
+                    binding.etPhoneAdmin.text.toString(),
+                    binding.etEmailAdmin.text.toString())
+
+                //Paso 11. Limpiando los campos editables
+                Toast.makeText(requireContext(), "se guardaron los datos", Toast.LENGTH_LONG).show()
+                binding.etNameAdmin.text.clear()
+                binding.etAddressAdmin.text.clear()
+                binding.etPhoneAdmin.text.clear()
+                binding.etEmailAdmin.text.clear()
+
+                val db: SQLiteDatabase = informacionDBHelper.readableDatabase
+                val cursor = db.rawQuery("SELECT * FROM" + Tables.information["TABLE_NAME"], null )
+
+                if (cursor.moveToFirst()) {
+                    do {
+                        binding.etNameAdmin.setText(cursor.getString(1).toString())
+                        binding.etAddressAdmin.setText(cursor.getString(2).toString())
+                        binding.etPhoneAdmin.setText(cursor.getString(3).toString())
+                        binding.etEmailAdmin.setText(cursor.getString(4).toString())
+                    }while (cursor.moveToNext())
+                }
+            }else {
+                Toast.makeText(requireContext(), "Error al guardar, complete todos los campos", Toast.LENGTH_LONG).show()
+            }
+        }
+
+    }
+
 
     companion object {
         /**
