@@ -101,4 +101,9 @@ class ProductoRepository {
 
     }
 
+    fun getBebidas(productosModel: MutableLiveData<List<Producto>>): Any {
+            return (productosModel)
+
+    }
+
 }

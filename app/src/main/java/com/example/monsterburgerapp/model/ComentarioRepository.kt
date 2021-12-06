@@ -3,6 +3,7 @@ package com.example.monsterburgerapp.model
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -17,7 +18,7 @@ class ComentarioRepository {
         )
 
 
-    fun getComentarios() {
+    fun getComentarios(ComentarioModel: MutableLiveData<List<Comentario>>) {
 
         db.collection("comentarios")
             .get()

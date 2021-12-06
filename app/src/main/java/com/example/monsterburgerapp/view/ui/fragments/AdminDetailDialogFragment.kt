@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -19,6 +20,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.FragmentManager
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.FragmentAdminDetailDialogBinding
 import com.example.monsterburgerapp.model.DBHelper
@@ -64,6 +66,7 @@ class AdminDetailDialogFragment : Fragment() {
         args.putString("direccion", direccion)
         args.putString("telefono", telefono)
         args.putString("correo", correo)
+        args.putString("stringBase64", stringBase64)
 
         f.arguments = args
 
@@ -79,6 +82,7 @@ class AdminDetailDialogFragment : Fragment() {
             direccion = it.getString("direccion").toString()
             telefono = it.getString("telefono").toString()
             correo = it.getString("correo").toString()
+            stringImageBase64 = it.getString("stringBase64").toString()
 
         }
 
@@ -152,7 +156,7 @@ class AdminDetailDialogFragment : Fragment() {
 
     var retultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
 
-        result ->
+            result ->
 
         if (result.resultCode == Activity.RESULT_OK){
 
@@ -349,5 +353,9 @@ class AdminDetailDialogFragment : Fragment() {
      */
     fun isGooglePhotosUri(uri: Uri): Boolean {
         return "com.google.android.apps.photos.content" == uri.authority
+    }
+
+    fun show(childFragmentManager: FragmentManager, s: String) {
+        TODO("Not yet implemented")
     }
 }

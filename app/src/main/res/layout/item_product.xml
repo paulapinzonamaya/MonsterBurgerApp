@@ -39,7 +39,7 @@
                 android:layout_width="120sp"
                 android:layout_height="110sp"
                 android:layout_gravity="center"
-                android:src="@drawable/entrada_albondiga" />
+                android:src="@drawable/albondigas" />
 
         </LinearLayout>
 
