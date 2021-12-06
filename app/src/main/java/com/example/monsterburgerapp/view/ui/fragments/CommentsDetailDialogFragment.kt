@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.monsterburgerapp.R
 
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -28,6 +29,7 @@ class ComentsDetailDialogFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -37,6 +39,7 @@ class ComentsDetailDialogFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_coments_detail_dialog, container, false)
     }
+
 
     companion object {
         /**

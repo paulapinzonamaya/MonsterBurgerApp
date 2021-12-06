@@ -40,7 +40,7 @@ class ComentarioAdapter (val comentarioList:List<Comentario>): RecyclerView.Adap
             var tvItemCommentComment = view.findViewById<TextView>(R.id.tvItemCommentsComment)
 
 
-            tvItemCommentUser.text = comentario.nombreUsario
+            tvItemCommentUser.text = comentario.nombreUsuario
             tvItemCommentScore.text = comentario.puntaje.toString() + "/5"
             tvItemCommentComment.text = comentario.texto
 

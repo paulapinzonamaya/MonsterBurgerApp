@@ -29,9 +29,6 @@ class ComentsFragment : Fragment() {
     var comentarios= listOf<Comentario>(
         Comentario("Brad",5,"La mejor tienda de hamburguesas"),
         Comentario("Angelina",5,"La mejor tienda de hamburguesas")
-
-
-
     )
 
 
