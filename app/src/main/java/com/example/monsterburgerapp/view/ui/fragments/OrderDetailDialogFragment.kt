@@ -9,14 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.FragmentOrderDetailDialogBinding
-import com.example.monsterburgerapp.view.adapter.ProductoAdapter
-import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,11 +32,12 @@ class OrderDetailDialogFragment : DialogFragment() {
 
 
     fun newInstance(
-        id:String,
-        nombre:String,
-        precio:Int,
-        descripcion:String,
-        imageUrl:String
+        id: String,
+        nombre: String,
+        precio: Int,
+        descripcion: String,
+        imageUrl: String,
+        inventario: Int
     ):OrderDetailDialogFragment{
         var f = OrderDetailDialogFragment()
 
