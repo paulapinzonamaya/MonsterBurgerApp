@@ -95,4 +95,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
 
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

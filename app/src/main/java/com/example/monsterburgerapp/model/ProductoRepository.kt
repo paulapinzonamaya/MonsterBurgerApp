@@ -15,47 +15,9 @@ class ProductoRepository {
     val db = Firebase.firestore
     val docRef = db.collection("Productos")
     private var productos = listOf<Producto>()
-    val docRefb = db.collection("Bebidas")
-    private var bebidas = listOf<Producto>()
 
 
-    fun getBebidas(mutableLiveData: MutableLiveData<List<Producto>> ){
-
-
-
-        docRef.whereEqualTo("categoria", "Bebidas").addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                Log.w(ContentValues.TAG, "Listen failed.", e)
-                return@addSnapshotListener
-            }
-
-            if (snapshot != null && !snapshot.isEmpty) {
-
-                productos = listOf()
-                for (document in snapshot.documents) {
-
-                    var producto = document.toObject(Producto::class.java)
-
-                    if(producto != null){
-                        producto.id = document.id
-                        productos += producto
-                    }
-
-                }
-                mutableLiveData.postValue(productos)
-
-            } else {
-                Log.d(ContentValues.TAG, "Current data: null")
-            }
-        }
-
-
-    }
-
-
-
-
-    fun getProductos(mutableLiveData: MutableLiveData<List<Producto>> ){
+   fun getProductos(mutableLiveData: MutableLiveData<List<Producto>> ){
 
 
         docRef.whereEqualTo("categoria", "Entradas").addSnapshotListener { snapshot, e ->
@@ -84,9 +46,7 @@ class ProductoRepository {
             }
         }
 
-
     }
-
 
 
     fun findByIds(productosIds:List<String>, mutableLiveData: MutableLiveData<List<Producto>>):List<Producto>{
@@ -136,6 +96,9 @@ class ProductoRepository {
 
     }
 
+    fun decrementarInventario(){
+        //TODO Decrementar Inventario en Firebase
 
+    }
 
 }

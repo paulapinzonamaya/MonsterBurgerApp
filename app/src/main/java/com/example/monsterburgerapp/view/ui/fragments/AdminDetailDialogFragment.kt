@@ -1,16 +1,29 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
+import android.app.Activity
+import android.content.ContentUris
+import android.content.Context
+import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.provider.DocumentsContract
+import android.provider.MediaStore
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.FragmentAdminDetailDialogBinding
 import com.example.monsterburgerapp.model.DBHelper
 import com.example.monsterburgerapp.model.Tables
+import java.io.File
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,12 +46,15 @@ class AdminDetailDialogFragment : Fragment() {
     private lateinit var correo:String
 
     private lateinit var informacionDBHelper: DBHelper
+    private lateinit var ivPhotoUser:ImageView
+    private lateinit var stringImageBase64:String
 
     fun newInstance(
-        nombre:String,
-        direccion:String,
-        telefono:String,
-        correo:String,
+        nombre: String,
+        direccion: String,
+        telefono: String,
+        correo: String,
+        stringBase64: String,
     ):AdminDetailDialogFragment {
 
         val f = AdminDetailDialogFragment()
@@ -79,6 +95,8 @@ class AdminDetailDialogFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        ivPhotoUser = view.findViewById(R.id.ibPhotoAdmin)
 
         var binding = FragmentAdminDetailDialogBinding.bind(view)
 
@@ -126,6 +144,48 @@ class AdminDetailDialogFragment : Fragment() {
             }
         }
 
+        binding.ibPhotoAdmin.setOnClickListener{
+            val galleryIntent = Intent(Intent.ACTION_PICK,MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            retultLauncher.launch(galleryIntent)
+        }
+    }
+
+    var retultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+
+        result ->
+
+        if (result.resultCode == Activity.RESULT_OK){
+
+            var data: Intent? = result.data
+
+            var imageUri = data?.data
+
+            ivPhotoUser.setImageURI(imageUri)
+
+            println(">>> IMAGE URI ")
+            println(imageUri?.path.toString())
+
+            var fileRealPath:String? = ""
+
+            imageUri?.let {
+                fileRealPath = getRealPathFromURI(requireContext(), it)
+            }
+
+            println(">>> RUTA REAL")
+            println(fileRealPath)
+
+            //TODO: realizar rezise para tener la imagen miniatura
+            var fileImage:File = File(imageUri?.path)
+
+            stringImageBase64 = converToBase64(fileImage)
+            println(stringImageBase64)
+
+        }
+    }
+
+    fun converToBase64(file:File):String{
+
+        return Base64.encodeToString(file.readBytes(), Base64.DEFAULT)
     }
 
 
@@ -147,5 +207,147 @@ class AdminDetailDialogFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun getRealPathFromURI(context: Context, uri: Uri): String? {
+        when {
+            // DocumentProvider
+            DocumentsContract.isDocumentUri(context, uri) -> {
+                when {
+                    // ExternalStorageProvider
+                    isExternalStorageDocument(uri) -> {
+                        val docId = DocumentsContract.getDocumentId(uri)
+                        val split = docId.split(":").toTypedArray()
+                        val type = split[0]
+                        // This is for checking Main Memory
+                        return if ("primary".equals(type, ignoreCase = true)) {
+                            if (split.size > 1) {
+                                Environment.getExternalStorageDirectory().toString() + "/" + split[1]
+                            } else {
+                                Environment.getExternalStorageDirectory().toString() + "/"
+                            }
+                            // This is for checking SD Card
+                        } else {
+                            "storage" + "/" + docId.replace(":", "/")
+                        }
+                    }
+                    isDownloadsDocument(uri) -> {
+                        val fileName = getFilePath(context, uri)
+                        if (fileName != null) {
+                            return Environment.getExternalStorageDirectory().toString() + "/Download/" + fileName
+                        }
+                        var id = DocumentsContract.getDocumentId(uri)
+                        if (id.startsWith("raw:")) {
+                            id = id.replaceFirst("raw:".toRegex(), "")
+                            val file = File(id)
+                            if (file.exists()) return id
+                        }
+                        val contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), java.lang.Long.valueOf(id))
+                        return getDataColumn(context, contentUri, null, null)
+                    }
+                    isMediaDocument(uri) -> {
+                        val docId = DocumentsContract.getDocumentId(uri)
+                        val split = docId.split(":").toTypedArray()
+                        val type = split[0]
+                        var contentUri: Uri? = null
+                        when (type) {
+                            "image" -> {
+                                contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                            }
+                            "video" -> {
+                                contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI
+                            }
+                            "audio" -> {
+                                contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+                            }
+                        }
+                        val selection = "_id=?"
+                        val selectionArgs = arrayOf(split[1])
+                        return getDataColumn(context, contentUri, selection, selectionArgs)
+                    }
+                }
+            }
+            "content".equals(uri.scheme, ignoreCase = true) -> {
+                // Return the remote address
+                return if (isGooglePhotosUri(uri)) uri.lastPathSegment else getDataColumn(context, uri, null, null)
+            }
+            "file".equals(uri.scheme, ignoreCase = true) -> {
+                return uri.path
+            }
+        }
+        return null
+    }
+
+    fun getDataColumn(context: Context, uri: Uri?, selection: String?,
+                      selectionArgs: Array<String>?): String? {
+        var cursor: Cursor? = null
+        val column = "_data"
+        val projection = arrayOf(
+            column
+        )
+        try {
+            if (uri == null) return null
+            cursor = context.contentResolver.query(uri, projection, selection, selectionArgs,
+                null)
+            if (cursor != null && cursor.moveToFirst()) {
+                val index = cursor.getColumnIndexOrThrow(column)
+                return cursor.getString(index)
+            }
+        } finally {
+            cursor?.close()
+        }
+        return null
+    }
+
+
+    fun getFilePath(context: Context, uri: Uri?): String? {
+        var cursor: Cursor? = null
+        val projection = arrayOf(
+            MediaStore.MediaColumns.DISPLAY_NAME
+        )
+        try {
+            if (uri == null) return null
+            cursor = context.contentResolver.query(uri, projection, null, null,
+                null)
+            if (cursor != null && cursor.moveToFirst()) {
+                val index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME)
+                return cursor.getString(index)
+            }
+        } finally {
+            cursor?.close()
+        }
+        return null
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is ExternalStorageProvider.
+     */
+    fun isExternalStorageDocument(uri: Uri): Boolean {
+        return "com.android.externalstorage.documents" == uri.authority
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is DownloadsProvider.
+     */
+    fun isDownloadsDocument(uri: Uri): Boolean {
+        return "com.android.providers.downloads.documents" == uri.authority
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is MediaProvider.
+     */
+    fun isMediaDocument(uri: Uri): Boolean {
+        return "com.android.providers.media.documents" == uri.authority
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is Google Photos.
+     */
+    fun isGooglePhotosUri(uri: Uri): Boolean {
+        return "com.google.android.apps.photos.content" == uri.authority
     }
 }

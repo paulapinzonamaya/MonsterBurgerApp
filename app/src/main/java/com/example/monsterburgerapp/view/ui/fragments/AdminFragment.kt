@@ -1,13 +1,14 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.databinding.FragmentAdminBinding
 import com.example.monsterburgerapp.model.DBHelper
@@ -29,6 +30,7 @@ class AdminFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var informacionDBHelper: DBHelper
+    private lateinit var stringBase64:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +42,7 @@ class AdminFragment : Fragment() {
         informacionDBHelper = DBHelper(requireActivity())
 
         val db: SQLiteDatabase = informacionDBHelper.readableDatabase
-        val cursor =
-            db.rawQuery("SELECT * FROM" + Tables.information["TABLE_NAME"] + " WHERE id=1", null)
+        val cursor = db.rawQuery("SELECT * FROM" + Tables.information["TABLE_NAME"] + " WHERE id=1", null)
 
         if (!cursor.moveToFirst()) {
             informacionDBHelper.insert(
@@ -49,6 +50,7 @@ class AdminFragment : Fragment() {
                 "dirección",
                 "email@ejemplo.com",
                 "teléfono",
+                "base64"
 
                 )
         }
@@ -81,6 +83,10 @@ class AdminFragment : Fragment() {
                 binding.etAddressAdmin.setText(cursor.getString(2).toString())
                 binding.etPhoneAdmin.setText(cursor.getString(3).toString())
                 binding.etEmailAdmin.setText(cursor.getString(4).toString())
+
+                stringBase64 = cursor.getString(5).toString()
+                var imageBytes = Base64.decode(stringBase64, Base64.DEFAULT)
+                var decodeImge = BitmapFactory.decodeByteArray(imageBytes,0, imageBytes.size)
             }while (cursor.moveToNext())
         }
 
@@ -95,13 +101,12 @@ class AdminFragment : Fragment() {
                 nombre,
                 direccion,
                 telefono,
-                correo
+                correo,
+                stringBase64
             )
-            dialogFragment.show(childFragmentManager, tag: "AdminDetailDialogFragment")
+            dialogFragment.show(childFragmentManager, "AdminDetailDialogFragment")
         }
     }
-
-
 
 
     companion object {
