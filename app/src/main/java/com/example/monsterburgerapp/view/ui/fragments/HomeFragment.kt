@@ -96,13 +96,7 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
-    }
 
     override fun onMapReady(p0: GoogleMap) {
         var name = "Monster Burger"
@@ -124,10 +118,11 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
 
     }
 
-    /**override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
 
         val ButtonInstagram = view.findViewById<ImageButton>(R.id.ButtonInstagram)
         ButtonInstagram?.setOnClickListener() {
@@ -188,7 +183,11 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
 
 
 
-     */
+
+
+
+
+
     private fun replaceFragment(fragment: Fragment){
 
         if(fragment != null){
