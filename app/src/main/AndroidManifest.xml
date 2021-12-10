@@ -24,10 +24,17 @@
         android:hardwareAccelerated="true">
 
 
+
+
+
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
             tools:replace="screenOrientation" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyANvYzfeBrJUu7BC-c4kwJGz93tr3EsFxM" />
 
 
 

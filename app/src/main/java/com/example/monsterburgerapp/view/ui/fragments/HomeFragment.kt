@@ -44,7 +44,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment() , OnMapReadyCallback {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -86,7 +86,7 @@ class HomeFragment : Fragment() {
             }
             R.id.nav_confi-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
             R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
-            R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
+            R.id.nav_fin-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
 
 
         }
@@ -96,10 +96,35 @@ class HomeFragment : Fragment() {
 
     }
 
-
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
+        var name = "Monster Burger"
+        var address = "Cra 8 b N 92a 67, Bogotá - Colombia"
+        var latitude = 4.713075278323504
+        var longitude = -74.09580839325278
+        var zoom = 16f
+
+        var centerMap = LatLng(latitude, longitude)
+        p0?.animateCamera(CameraUpdateFactory.newLatLngZoom(centerMap, zoom))
+
+
+        val marker = p0.addMarker(
+            MarkerOptions()
+                .title(name)
+                .position(centerMap)
+        )
+
+
+    }
+
+    /**override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
@@ -125,18 +150,6 @@ class HomeFragment : Fragment() {
             })
 
         }
-
-
-        /**var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
-        Button_Qr.setOnClickListener{
-                view:View->
-            Toast.makeText(requireContext(), "TODO: SCAN", Toast.LENGTH_LONG).show()
-            barcodeLauncher.launch(ScanOptions())
-
-
-        }*/
-
-
 
         var button_entradas = view.findViewById<Button>(R.id.button_entradas)
         button_entradas.setOnClickListener {
@@ -172,6 +185,10 @@ class HomeFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
     }
+
+
+
+     */
     private fun replaceFragment(fragment: Fragment){
 
         if(fragment != null){
@@ -259,6 +276,9 @@ class HomeFragment : Fragment() {
                 }
             }
     }
+
+
+
 
 
 }
