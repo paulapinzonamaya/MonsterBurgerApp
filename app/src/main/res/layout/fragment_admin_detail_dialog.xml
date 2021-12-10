@@ -3,22 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragments.AdminDetailDialogFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.fragments.AdminFragment">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            android:layout_margin="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
@@ -32,58 +33,68 @@
                     />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@tools:sample/avatars"
+                    android:id="@+id/ibPhotoAdmin"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_baseline_person_24"
+                    android:scaleType="fitStart"
                     android:layout_gravity="center_horizontal"/>
+
                 <EditText
                     android:id="@+id/etNameAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
                     android:hint="Nombre"
                     android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
-
-
+                    />
 
                 <EditText
-                    android:id="@+id/etAddressAdmin"
+                    android:id="@+id/etAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
-                    android:hint="Direccion"
-                    android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:hint="Dirección"/>
+
                 <EditText
-                    android:id="@+id/etPhoneAdmin"
+                    android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
-                    android:hint="Telefono"
-                    android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:hint="Teléfono"/>
+
                 <EditText
-                    android:id="@+id/etEmailAdmin"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"
-                    android:hint="Correo"
-                    android:inputType="textMultiLine"
-                    android:gravity="center_horizontal"/>
-                <Button
-                    android:id="@+id/btSaveChanges"
-                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:hint="Correo"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveAdmin"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/primaryDarkColor"
+                    android:backgroundTint="@color/colorLaunch"
                     android:text="Guardar cambios"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_marginTop="@dimen/defaultLayoutMargin"/>
+                    android:textColor="@color/white"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="8dp"
+                    app:cornerRadius="60px"/>
 
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
+
+    </ScrollView>
+
 
 </FrameLayout>

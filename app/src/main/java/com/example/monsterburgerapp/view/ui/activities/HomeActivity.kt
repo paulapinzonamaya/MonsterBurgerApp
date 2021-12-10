@@ -2,6 +2,9 @@ package com.example.monsterburgerapp.view.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -14,6 +17,7 @@ import com.example.monsterburgerapp.databinding.ActivityHomeBinding
 import com.example.monsterburgerapp.databinding.ActivityMainBinding
 import com.example.monsterburgerapp.view.ui.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
@@ -29,12 +33,18 @@ class HomeActivity : AppCompatActivity() {
     private val carritoFragment = CarritoFragment()
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
+    private lateinit var toolbar: Toolbar
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
+
+
 
         val binding = DataBindingUtil.setContentView<ActivityHomeBinding>(
             this,
@@ -43,10 +53,15 @@ class HomeActivity : AppCompatActivity() {
 
         drawerLayout = binding.drawerLayout
 
+        //////////////////
+
+
+
+
+
+        ////////////////////77
 
         replaceFragment(homeFragment)
-
-
 
         var bottonNavigation = findViewById<BottomNavigationView>(R.id.bnvMenu)
         bottonNavigation.setOnItemSelectedListener {
@@ -64,6 +79,18 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+
+
+
+    ///////////////////////////////////////////
+
+
+
+    ///////////////////////////////////////////
+
+
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)

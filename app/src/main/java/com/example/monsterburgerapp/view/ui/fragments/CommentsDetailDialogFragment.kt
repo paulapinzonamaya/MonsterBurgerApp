@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 import com.example.monsterburgerapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,11 +25,38 @@ class ComentsDetailDialogFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    //////////////////////////////////////////_________________________________________________________________________________________________-
+/*
+    private lateinit var nombreUsuario: EditText
+    private lateinit var puntaje:EditText
+    private lateinit  texto:EditText
+    private lateinit var btSaveComment: Button
+
+
+
+ */
+    //////////////////////////////////////////_________________________________________________________________________________________________-
+
+
+
+
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
+
+
+
+
         }
     }
 
@@ -57,4 +87,28 @@ class ComentsDetailDialogFragment : Fragment() {
                 }
             }
     }
+
+/*
+//////////////////////////////////////////_________________________________________________________________________________________________-
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        nombre=view.findViewById(R.id.registroTextNombre)
+        telefono=view.findViewById(R.id.registroTextNumero)
+        email=view.findViewById(R.id.registroTextEmail)
+        pass=view.findViewById(R.id.registroTextPassword)
+        btnGuardarRegistro=view.findViewById(R.id.btnRegistrarse)
+
+
+        nombreUsuario= findViewById(R.id.etnombreusuario)
+        puntaje
+        texto
+        btSaveComment
+
+
+    }
+    //////////////////////////////////////////_________________________________________________________________________________________________-
+
+ */
 }

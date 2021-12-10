@@ -5,15 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.monsterburgerapp.R
-import com.example.monsterburgerapp.model.Comentario
-import com.example.monsterburgerapp.model.Producto
-import com.example.monsterburgerapp.view.adapter.ComentarioAdapter
 import com.example.monsterburgerapp.view.adapter.ProductoAdapter
 import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
 
@@ -24,10 +19,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [OrderFragment.newInstance] factory method to
+ * Use the [AcompanamientosFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class OrderFragment : Fragment() {
+class AcompanamientosFragment : Fragment() {
+    // TODO: Rename and change types of parameters
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -48,7 +44,7 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        viewModel.getProductosss()
+        viewModel.getAcompañamientos()
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_order, container, false)
     }
@@ -65,17 +61,19 @@ class OrderFragment : Fragment() {
             val adapter = ProductoAdapter(productos, childFragmentManager)
             rvOrder.adapter = adapter
         }
-/*
+
+        /*
         var fab = view.findViewById<FloatingActionButton>(R.id.botonAddCar)
         fab.setOnClickListener {
                 view:View->
             replaceFragment(CarritoFragment())
         }
         super.onViewCreated(view, savedInstanceState)
-
- */
     }
 
+
+         */
+    }
     private fun replaceFragment(fragment: Fragment){
 
         if(fragment != null){

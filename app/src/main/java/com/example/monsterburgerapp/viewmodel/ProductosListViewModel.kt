@@ -9,14 +9,16 @@ class ProductosListViewModel: ViewModel() {
 
     var productoRepository: ProductoRepository
     var productosModel = MutableLiveData<List<Producto>>()
+    var productoModel = MutableLiveData<Producto>()
+
 
 
     init {
         productoRepository = ProductoRepository()
     }
 
-    fun getProductos(){
-        var currentProductoList =  productoRepository.getProductos(productosModel)
+    fun getProductosss(){
+        var currentProductoList =  productoRepository.getProductosss(productosModel)
 
     }
 
@@ -24,5 +26,22 @@ class ProductosListViewModel: ViewModel() {
         var currentProductoList =  productoRepository.getBebidas(productosModel)
 
     }
+
+    fun getAcompañamientos(){
+        var currentProductoList =  productoRepository.getAcompañamientos(productosModel)
+
+    }
+
+    fun getHamburguesas(){
+        var currentProductoList =  productoRepository.getHamburguesas(productosModel)
+
+    }
+
+    fun getProductoByBarCode(codeBar:String){
+
+        productoRepository.getProductoByBarCode(productoModel, codeBar)
+
+    }
+
 
 }

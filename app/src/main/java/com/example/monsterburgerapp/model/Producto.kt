@@ -8,12 +8,14 @@ data class Producto (
     var precio:Int,
     var descripcion:String,
     var imageUrl:String,
-    var inventario:Int
+    var inventario:Int,
+    var cod_barras:String
+
 
 ){
 
     constructor():this(
-        "","","",0,"","",0
+        "","","",0,"","",0,""
     ){}
 }
 

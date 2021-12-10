@@ -22,6 +22,7 @@
                 android:layout_height="match_parent"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
+
                 <include
                     android:id="@+id/toolbar_p"
                     layout="@layout/toolbar" />
@@ -64,11 +65,12 @@
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/navdrawer_menu" />
+            app:menu="@menu/navdrawer_menu"
+            android:fitsSystemWindows="true"/>
 
 
     </androidx.drawerlayout.widget.DrawerLayout>

@@ -12,7 +12,7 @@ import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.model.Comentario
 import com.example.monsterburgerapp.model.Producto
 import com.example.monsterburgerapp.view.ui.fragments.OrderDetailDialogFragment
-
+import com.squareup.picasso.Picasso
 
 
 class ProductoAdapter (val productoList:List<Producto>, val fragmentManager: FragmentManager ): RecyclerView.Adapter<ProductoAdapter.ProductoHolder>() {
@@ -43,11 +43,24 @@ class ProductoAdapter (val productoList:List<Producto>, val fragmentManager: Fra
             var itemImageProductos = view.findViewById<ImageView>(R.id.itemImageProductos)
             var itemtitulo = view.findViewById<TextView>(R.id.itemtitulo)
             var precioProducto = view.findViewById<TextView>(R.id.precioProducto)
+            var tvInventario = view.findViewById<TextView>(R.id.tvInventario)
 
 
-            itemImageProductos.setImageResource(R.drawable.ic_baseline_person_24)
+
+           // itemImageProductos.setImageResource(R.drawable.ic_baseline_person_24)
+            //
+
+            if (producto.imageUrl.isEmpty()) {
+                itemImageProductos.setImageResource(R.drawable.ic_baseline_fastfood_24);
+            } else{
+                Picasso.get().load(producto.imageUrl).into(itemImageProductos);
+            }
+
+
             itemtitulo.text = producto.nombre
             precioProducto.text = producto.precio.toString()
+            tvInventario.text = producto.inventario.toString() + " Unid"
+
 
 
             card_view_productos.setOnClickListener{
@@ -58,7 +71,8 @@ class ProductoAdapter (val productoList:List<Producto>, val fragmentManager: Fra
                     producto.nombre,
                     producto.precio,
                     producto.descripcion,
-                    producto.imageUrl
+                    producto.imageUrl,
+                    producto.inventario
                 )
                 dialogFragment.show(fragmentManager, "prueba")
 

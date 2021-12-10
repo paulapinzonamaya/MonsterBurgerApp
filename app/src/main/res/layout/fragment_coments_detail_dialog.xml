@@ -13,6 +13,26 @@
         android:textSize="@dimen/itemCommentsUser"
         android:textStyle="bold" />
 
+
+
+    <EditText
+        android:id="@+id/etnombreusuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de usuario: "
+        />
+
+
+
+    <EditText
+        android:id="@+id/etpuntaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Puntaje: "
+        />
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

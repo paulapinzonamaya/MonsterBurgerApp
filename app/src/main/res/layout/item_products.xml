@@ -28,7 +28,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/ic_baseline_fastfood_24"/>
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_fastfood_24" />
 
         <TextView
             android:id="@+id/itemtitulo"
@@ -52,20 +53,33 @@
             android:layout_toEndOf="@+id/itemImageProductos"
             android:layout_toRightOf="@+id/itemImageProductos"
             android:text="precio"
-            android:textSize="15dp"
             android:textColor="@color/black"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
-      <!--  <Button
-            android:id="@+id/BtBuyProduct"
+        <TextView
+            android:id="@+id/tvInventario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/precioProducto"
-            android:layout_toEndOf="@+id/itemImageProductos"
-            android:layout_toRightOf="@+id/itemImageProductos" />
 
--->
+            android:layout_toRightOf="@+id/itemImageProductos"
+            android:text="unidades disponibles"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+        <!--  <Button
+              android:id="@+id/BtBuyProduct"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@+id/precioProducto"
+              android:layout_toEndOf="@+id/itemImageProductos"
+              android:layout_toRightOf="@+id/itemImageProductos" />
+
+  -->
 
     </RelativeLayout>
 

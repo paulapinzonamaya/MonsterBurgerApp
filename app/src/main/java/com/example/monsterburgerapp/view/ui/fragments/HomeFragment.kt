@@ -1,13 +1,21 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.monsterburgerapp.R
+import com.example.monsterburgerapp.model.Producto
+import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanIntentResult
+import com.journeyapps.barcodescanner.ScanOptions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +34,8 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val viewModel: ProductosListViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,10 +51,43 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+    ///////////////Menu lateral
+    /*
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.navdrawer_menu, menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
+        when(item.itemId){
+            R.id.adminFragment-> Toast.makeText(requireContext(),"TODO: adminFragment", Toast.LENGTH_LONG).show()
+            R.id.logOut-> Toast.makeText(requireContext(),"TODO: logOut", Toast.LENGTH_LONG).show()
+
+        }
+        return NavigationUI.
+        onNavDestinationSelected(item,requireView().findNavController())
+                || super.onOptionsItemSelected(item)
+
+    }
+*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
+        var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
+        Button_Qr.setOnClickListener{
+            view:View->
+            Toast.makeText(requireContext(), "TODO: SCAN", Toast.LENGTH_LONG).show()
+            barcodeLauncher.launch(ScanOptions())
+
+
+        }
+
+
 
         var button_entradas = view.findViewById<Button>(R.id.button_entradas)
         button_entradas.setOnClickListener {
@@ -61,6 +104,18 @@ class HomeFragment : Fragment() {
         }
 
 
+        var button_acompanamiento = view.findViewById<Button>(R.id.button_acompanamiento)
+        button_acompanamiento.setOnClickListener {
+                view:View->
+            replaceFragment(AcompanamientosFragment())
+        }
+
+
+        var button_hamburguesa = view.findViewById<Button>(R.id.button_hamburguesa)
+        button_hamburguesa.setOnClickListener {
+                view:View->
+            replaceFragment(HamburguesasFragment())
+        }
 
 
 
@@ -68,8 +123,6 @@ class HomeFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
     }
-
-
     private fun replaceFragment(fragment: Fragment){
 
         if(fragment != null){
@@ -78,6 +131,71 @@ class HomeFragment : Fragment() {
             transaction.commit()
         }
     }
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+    // Register the launcher and result handler
+    private val barcodeLauncher = registerForActivityResult(
+        ScanContract()
+    ) { result: ScanIntentResult ->
+        if (result.contents == null) {
+
+            Toast.makeText(requireActivity(), "Cancelled", Toast.LENGTH_LONG).show()
+
+        } else {
+
+            Toast.makeText(
+                requireActivity(),
+                "Scanned: " + result.contents,
+                Toast.LENGTH_LONG
+            ).show()
+
+
+            var producto: Producto
+
+            viewModel.getProductoByBarCode(result.contents)
+            viewModel.productoModel.observe(viewLifecycleOwner){
+                    producto->
+                println(">>>> PRODUCTO")
+                println(producto)
+
+                var barCodeFragment = BarCodeDetailDialogFragment().newInstance(
+
+                    producto.id,
+                    producto.nombre,
+                    producto.precio,
+                    producto.descripcion,
+                    producto.imageUrl,
+                    producto.inventario,
+                    producto.cod_barras
+
+                )
+
+                barCodeFragment.show(childFragmentManager, "BarCodeDetailDialogFragment")
+
+
+
+            }
+
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+
 
 
     companion object {

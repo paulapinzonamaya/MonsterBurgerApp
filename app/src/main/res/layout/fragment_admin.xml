@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.fragments.AdminFragment">
+
 
 
     <ScrollView
@@ -13,17 +15,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="25dp"
+            android:elevation="10dp">
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/defaultLayoutMargin">
+                android:layout_margin="@dimen/defaultLayoutMargin"
+                app:cardCornerRadius="60px" >
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="25dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -35,12 +43,15 @@
                         android:textStyle="bold" />
 
                     <ImageView
+                        android:id="@+id/ibPhotoAdmin"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/heightAdminProduct"
                         android:src="@drawable/ic_baseline_person_24"
                         android:layout_margin="@dimen/defaultLayoutMargin"/>
 
+
                     <TextView
+                        android:id="@+id/etNameAdmin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -49,7 +60,9 @@
                         android:textSize="@dimen/sizePriceProduct"
                         />
 
+
                     <TextView
+                        android:id="@+id/etAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -58,7 +71,9 @@
                         android:textSize="@dimen/sizePriceProduct"
                         />
 
+
                     <TextView
+                        android:id="@+id/etPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -66,28 +81,37 @@
                         android:textColor="@color/primaryTextColor"
                         android:textSize="@dimen/sizePriceProduct"
                         />
+
                     <TextView
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="Correo"
                         android:textColor="@color/primaryTextColor"
-                        android:textSize="@dimen/sizePriceProduct"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/sizePriceProduct" />
 
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/navigate_edition"
-                        android:layout_width="match_parent"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="15dp"
                         android:layout_marginEnd="24dp"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="25dp"
                         android:text="@string/navigate_edit"
                         android:textColor="@color/white"
+                        android:backgroundTint="@color/colorLaunch"
+                        app:layout_constraintBottom_toTopOf="@+id/navigate_edition"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintVertical_bias="0.594"
+                        android:textSize="14dp"
+                        app:cornerRadius="60px"/>
 
-                        />
 
                 </LinearLayout>
 

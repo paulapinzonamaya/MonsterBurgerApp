@@ -1,16 +1,22 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monsterburgerapp.R
 import com.example.monsterburgerapp.model.Comentario
 import com.example.monsterburgerapp.view.adapter.ComentarioAdapter
-
+import com.example.monsterburgerapp.view.adapter.ProductoAdapter
+import com.example.monsterburgerapp.viewmodel.ComentariosListViewModel
+import com.example.monsterburgerapp.viewmodel.ProductosListViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -26,6 +32,9 @@ class ComentsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val viewModel: ComentariosListViewModel by viewModels()
+
+    /*
     var comentarios= listOf<Comentario>(
         Comentario("Brad",5,"La mejor tienda de hamburguesas"),
         Comentario("Angelina",5,"La mejor tienda de hamburguesas")
@@ -33,7 +42,7 @@ class ComentsFragment : Fragment() {
 
 
     )
-
+*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +57,8 @@ class ComentsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        viewModel.getComentarios()
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_coments, container, false)
     }
@@ -56,18 +67,43 @@ class ComentsFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
         var rvComments= view.findViewById<RecyclerView>(R.id.rvComments)
         rvComments.layoutManager = LinearLayoutManager(requireActivity())
 
-        val adapter = ComentarioAdapter(comentarios)
+        viewModel.comentariosModel.observe(viewLifecycleOwner) {
+                comentarios->
+            val adapter = ComentarioAdapter(comentarios, childFragmentManager)
+            rvComments.adapter = adapter
+
+        }
+        /*val adapter = ComentarioAdapter(comentarios)
         rvComments.adapter = adapter
 
 
+         */
+        var botonMiComentario = view.findViewById<FloatingActionButton>(R.id.botonMiComentario)
+        botonMiComentario.setOnClickListener {
+                view:View->
+            replaceFragment(ComentsDetailDialogFragment())
+        }
+
         super.onViewCreated(view, savedInstanceState)
+
     }
 
 
 
+    private fun replaceFragment(fragment: Fragment){
+
+        if(fragment != null){
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragContent,fragment)
+            transaction.commit()
+        }
+
+    }
 
 
 
