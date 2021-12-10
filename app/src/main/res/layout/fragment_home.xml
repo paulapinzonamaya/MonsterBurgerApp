@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hola,Usuario"
+                android:textSize="20dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"/>
@@ -44,39 +45,20 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="0dp"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins"/>
-
-            <EditText
-                android:id="@+id/buscador"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="25dp"
-                android:textColor="@color/black"
-                android:hint="Buscar"
-                android:inputType="textCapCharacters"
-                android:background="#ACACAC" />
-
-            <ImageButton
-                android:id="@+id/Button_Qr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="340dp"
-                android:layout_marginTop="-38dp"
-                android:backgroundTint="#ACACAC"
-                android:src="@drawable/ic_baseline_qr_code_scanner_24" />
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
                 android:text="Categorias"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins"/>
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/entradas"
@@ -167,14 +149,14 @@
 
 
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
                 android:text="Promociones"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -233,14 +215,14 @@
                 android:layout_gravity="center_horizontal"/>
 
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
                 android:text="Sobre Nosotros"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -251,7 +233,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Restaurante bogotano con especialidad en la preparacion de las hamburguesas mas deliciosas a los mejores precios. 8 años de experiencia nos respalda "
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:gravity="center"/>
 
             <TextView
@@ -261,7 +243,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Contactanos"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -309,7 +291,7 @@
                 android:layout_marginTop="50dp"
                 android:text="siguenos en todas nuestras redes!"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"/>
 
             <ImageButton
@@ -340,9 +322,9 @@
                 android:layout_marginTop="40dp"
                 android:text="Nuestra ubicacion a un clic"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:gravity="center"/>
+                android:gravity="center_horizontal"/>
 
 
 
