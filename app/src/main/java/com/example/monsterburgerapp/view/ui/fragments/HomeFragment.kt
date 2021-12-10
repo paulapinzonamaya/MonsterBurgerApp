@@ -79,6 +79,11 @@ class HomeFragment : Fragment() {
 
 
         when(item.itemId){
+
+            R.id.nav_escaner->{
+                Toast.makeText(requireContext(), "TODO: SCAN", Toast.LENGTH_LONG).show()
+                barcodeLauncher.launch(ScanOptions())
+            }
             R.id.nav_confi-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
             R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
             R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
@@ -87,11 +92,11 @@ class HomeFragment : Fragment() {
         }
 
 
-        return NavigationUI.
-        onNavDestinationSelected(item,requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        return true
 
     }
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -122,14 +127,14 @@ class HomeFragment : Fragment() {
         }
 
 
-        var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
+        /**var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
         Button_Qr.setOnClickListener{
                 view:View->
             Toast.makeText(requireContext(), "TODO: SCAN", Toast.LENGTH_LONG).show()
             barcodeLauncher.launch(ScanOptions())
 
 
-        }
+        }*/
 
 
 
