@@ -335,19 +335,22 @@
                 android:id="@+id/ButtonTwitter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/fui_ic_twitter_bird_white_24dp"
-                android:background="#FA3C32"
+                android:src="@drawable/twitter"
+                android:background="@color/white"
                 android:layout_marginHorizontal="240dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:scaleType="fitStart"/>
 
             <ImageButton
-                android:id="@+id/ButtonFacebook"
+                android:id="@+id/ButtonInstagram"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/fui_ic_facebook_white_22dp"
-                android:background="@color/primaryColor"
+                android:src="@drawable/insta"
+                android:background="@color/white"
                 android:layout_marginTop="-50dp"
-                android:layout_marginHorizontal="120dp"/>
+                android:layout_marginHorizontal="120dp"
+                android:scaleType="fitStart"
+                />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -1,5 +1,7 @@
 package com.example.monsterburgerapp.view.ui.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -33,6 +35,7 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
 
     private val viewModel: ProductosListViewModel by viewModels()
 
@@ -76,6 +79,29 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+        val ButtonInstagram = view.findViewById<ImageButton>(R.id.ButtonInstagram)
+        ButtonInstagram?.setOnClickListener() {
+
+
+            var url = "https://www.instagram.com/?hl=es-la";
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(url)
+            })
+
+        }
+
+        val ButtonTwitter = view.findViewById<ImageButton>(R.id.ButtonTwitter)
+        ButtonTwitter?.setOnClickListener() {
+
+
+            var url = "https://twitter.com/";
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(url)
+            })
+
+        }
 
 
         var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
