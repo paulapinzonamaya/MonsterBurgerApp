@@ -18,6 +18,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+
+
+
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,11 +64,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
-    ///////////////Menu lateral
-    /*
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.navdrawer_menu, menu)
@@ -65,16 +79,20 @@ class HomeFragment : Fragment() {
 
 
         when(item.itemId){
-            R.id.adminFragment-> Toast.makeText(requireContext(),"TODO: adminFragment", Toast.LENGTH_LONG).show()
-            R.id.logOut-> Toast.makeText(requireContext(),"TODO: logOut", Toast.LENGTH_LONG).show()
+            R.id.nav_confi-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
+            R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
+            R.id.nav_escaner-> Toast.makeText(requireContext(),"TODO: search", Toast.LENGTH_LONG).show()
+
 
         }
+
+
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
 
     }
-*/
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -106,7 +124,7 @@ class HomeFragment : Fragment() {
 
         var Button_Qr = view.findViewById<ImageButton>(R.id.Button_Qr)
         Button_Qr.setOnClickListener{
-            view:View->
+                view:View->
             Toast.makeText(requireContext(), "TODO: SCAN", Toast.LENGTH_LONG).show()
             barcodeLauncher.launch(ScanOptions())
 
@@ -213,13 +231,6 @@ class HomeFragment : Fragment() {
 
 
 
-
-
-
-
-
-
-
     ////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -243,4 +254,6 @@ class HomeFragment : Fragment() {
                 }
             }
     }
+
+
 }

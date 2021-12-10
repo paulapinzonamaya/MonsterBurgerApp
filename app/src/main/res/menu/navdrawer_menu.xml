@@ -2,11 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/adminFragment"
+        android:id="@+id/nav_confi"
 
         android:title="Configuraciones" />
     <item
-        android:id="@+id/logOut"
+        android:id="@+id/nav_escaner"
 
-        android:title="Cerrar Sesión" />
+        android:title="Escaner QR" />
+    <item
+        android:id="@+id/nav_fin"
+
+        android:title="Cerrar sesión" />
 </menu>

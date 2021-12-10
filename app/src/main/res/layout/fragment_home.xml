@@ -363,13 +363,7 @@
                 android:textStyle="bold"
                 android:gravity="center"/>
 
-            <ImageButton
-                android:id="@+id/ButtonMaps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/maps"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"/>
+
 
 
         </LinearLayout>
