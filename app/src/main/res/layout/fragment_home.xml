@@ -26,7 +26,7 @@
                 android:layout_height="60dp"
                 android:src="@drawable/img"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"/>
             <TextView
                 android:id="@+id/txt_hola"
                 android:layout_width="wrap_content"
@@ -244,7 +244,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="253dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
@@ -255,25 +255,26 @@
                 android:gravity="center"/>
 
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:text="Contactanos"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
             <TextView
-                android:layout_width="179dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="110dp"
                 android:layout_marginTop="0dp"
                 android:text="Cra 8 b N 92a 67"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
@@ -282,17 +283,17 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:layout_width="312dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="0dp"
                 android:text="Telefono: 26587465"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
-                android:layout_width="236dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
