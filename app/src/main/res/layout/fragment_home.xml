@@ -20,23 +20,20 @@
             android:layout_gravity="center_horizontal">
 
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/Button_ubicacion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="29dp"
-                android:layout_marginTop="10dp"
-                android:hint="Ubicación"
-                android:textColor="@color/black"
-                android:backgroundTint="#ACACAC"/>
-
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:src="@drawable/img"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
             <TextView
                 android:id="@+id/txt_hola"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hola,Usuario"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -54,7 +51,7 @@
             <EditText
                 android:id="@+id/buscador"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginStart="25dp"
                 android:textColor="@color/black"
                 android:hint="Buscar"
@@ -74,9 +71,9 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:layout_marginHorizontal="140dp"
+                android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:text="Categorias"
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins"/>
@@ -177,7 +174,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Promociones"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -192,30 +189,22 @@
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="-40dp"
                 android:fontFamily="@font/poppins"
                 android:text="Combo de hamburguesa tradicional con papas a la francesa y gaseosa "
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:layout_gravity="center_horizontal"/>
+
 
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
                 android:text="$18.000"
                 android:textStyle="italic"
-                android:layout_marginHorizontal="55dp"/>
+                android:layout_gravity="center_horizontal"/>
 
-
-            <ImageButton
-                android:id="@+id/button_promo1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_baseline_shopping_cart_24"
-                android:layout_marginTop="-60dp"
-                android:layout_marginHorizontal="290dp"
-                android:background="#FA3C32"/>
 
             <ImageView
                 android:id="@+id/combo2"
@@ -228,29 +217,20 @@
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="-10dp"
                 android:fontFamily="@font/poppins"
                 android:text=" 2 x 1 Hamburguesas artesanales acompañadas de una deliciosa limonada "
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="wrap_content"
                 android:text="$25.000"
                 android:textStyle="italic"
-                android:layout_marginHorizontal="55dp"/>
-
-            <ImageButton
-                android:id="@+id/button_promo2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_baseline_shopping_cart_24"
-                android:layout_marginTop="-60dp"
-                android:layout_marginHorizontal="290dp"
-                android:background="#FA3C32"/>
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
                 android:layout_width="130dp"
